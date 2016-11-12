@@ -1,0 +1,30 @@
+---
+#
+#  A basic hello world application
+#  This application, and steps to deploy are described in full in the getting started guide on predix.io
+#  Step 1 is to change your application name, save, exit, and cf push
+#  Step 2 - After you have your application running you can bind to the services below as described on predix.io
+
+applications:
+  - name: TCSSmartcityNotification
+    #buildpack: https://github.com/cloudfoundry-community/asp.net5-buildpack.git
+    #path: dist
+    memory: 640M
+    # stack: cflinuxfs2
+
+    # Step 2: Bind services and configure environment variables as described on predix.io
+    #services:
+    #        - my_redis_instance # change this to your redis service instance name
+    #        - my_viewsvc_instance # change this to your view service instance name
+    #env:
+    #  UAA_SERVER_URL: <my-UAA-URL>
+    #  REDIS: redis-<num>
+    # services:
+    #  - naga-predix-uaa
+    #env:
+    #  node_env: cloud
+    #  uaa_service_label : naga-predix-uaa
+    #  clientId: nagapsba2
+    #  base64ClientCredential: bmFnYXBzYmEy:amltYmFAZ2U=
+    # env:
+    #   UAA_SERVER_URL: https://09b918b8-ea1a-46f2-831d-4b65ce5480b2.predix-uaa.run.aws-usw02-pr.ice.predix.io 
