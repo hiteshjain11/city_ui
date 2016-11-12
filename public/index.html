@@ -59,7 +59,7 @@
 
     <link rel="import" href="bower_components/px-slider-master/px-slider.html"/>
     <link rel="stylesheet" href="stylesheets/dashboard.css"/>
-     <script src="https://maps.googleapis.com/maps/api/js?v=3.2&sensor=false" type='text/javascript'></script>
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.2" type='text/javascript'></script>
      <style>
       .navbar
       {
@@ -136,7 +136,7 @@ transition: opacity 400ms ease-in;
 }
 
 .close:hover { background: #00d9ff; }
-      
+
 
 
 
@@ -150,8 +150,8 @@ transition: opacity 400ms ease-in;
         <div class="viewport" style="padding-left: 13% !important;">
 
             <h1 style="color:#575757;font-size:20px;font-weight:bold">
-                 <img src="images/ge.png" style="height:29px;width:29px"></img>
-                 INVENTORY MONITORING
+                 <!-- <img src="images/ge.png" style="height:29px;width:29px"></img> -->
+                 City of Tomorrow
             </h1>
 
         </div>
@@ -162,7 +162,7 @@ transition: opacity 400ms ease-in;
                 <px-login class="sticky" style="max-width:140px !important"></px-login>
             </px-app-nav>
             <main class="u-pt-- u-pr-- u-pl--" role="main">
-                <section role="region" ui-view></section>
+                <section style="min-height: calc(100vh - 8rem);" role="region" ui-view></section>
             </main>
         </div>
     </div>
