@@ -1,0 +1,422 @@
+@CHARSET "ISO-8859-1";
+/*body	{
+	font-family: "Myriad Pro", Calibri, sans-serif;
+	background-color: #ebebeb;
+	margin: 0;
+	padding:0;
+}*/
+
+
+/* Card */
+.card {
+  background-color: #FFF;
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative; 
+  padding-top:10px}
+  .card .card-body {
+    padding-left: 10px;
+    padding-top:2px;
+    width:180px;
+    height: 100px }
+    .card .card-body .sub-title {
+      font-size: 1.2em;
+      padding: 1.2em 0em 0.4em 0em;
+      margin-bottom: 25px; }
+      .card .card-body .sub-title .description {
+        padding-left: 0.4em;
+        font-size: 0.8em;a
+        opacity: 0.8; }
+  .card .card-body.half-padding {
+    padding: 12.5px; 
+  .card .card-header .card-title {
+    padding: 1.2em 25px;
+    float: left; }
+    .card .card-header .card-title .title {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1.5em;
+      text-decoration: none; }
+  .card .card-header .pull-right {
+    padding: 0.5em 1em; }
+  .card .card-header:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .card .card-profile-img img {
+    width: 100%;
+    height: auto; }
+  .card .card-jumbotron {
+    padding: 1.5em 1.5em; }
+
+.card:hover .card-header .title {
+  text-decoration: none !important; }
+
+.card.summary-inline .card-body {
+  padding: 20px; }
+  .card.summary-inline .card-body .content {
+    float: right; }
+    .card.summary-inline .card-body .content .title {
+      font-family: 'Lato', sans-serif;
+      margin-top: -0.3em;
+      font-size: 3.5em;
+      text-align: right; }
+    .card.summary-inline .card-body .content .sub-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9em;
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 0;
+      padding: 0;
+      border-bottom: 0; }
+
+.card.profile .card-body {
+  padding: 0.5em 0.8em; }
+
+.card.profile .card-footer {
+  padding: 0.5em 0.8em; }
+
+.contentMainContainer	{
+	width : 1159px;
+	height : 334px;
+	margin: 0 auto;
+	margin-bottom: 31px;
+}
+.contentContainerClass	{
+	width : 267px;
+	height : 334px;
+	float : left;
+	margin-right: 27px;
+	margin-bottom: 10px;
+}	
+.ImageTextClass	{
+	color: #5d5d5d;
+    font-size: 13px;
+    left: 55px;
+    position: relative;
+    top: -17px;
+    width: 200px;
+}
+
+.temperatureImage,.humidityImage,.airQualityImage,.timeImage	{
+    height: 30px;
+    left: 16px;
+    position: relative;
+    top: 5px;
+    width: 28px;
+}
+.temperatureImage	{
+	background-image: url("../images/temperature.png");	
+}
+.humidityImage	{
+	background-image: url("../images/humidity.png");
+}
+.airQualityImage	{
+	background-image: url("../images/air.png");
+}
+.timeImage	{
+	background-image: url("../images/time.png");
+	background-size: 28px 30px;
+}
+
+.timeText	{
+	height: 40px;
+}
+
+
+.truckViewDetailsButtonClass	{
+ 	box-shadow: 0 0 6px 1px #888; 
+ 	border : 2px solid #c8c8c8;
+	border-radius: 12px;
+	width : 101px;
+	height : 22px;
+	position :relative;
+	top: 15px;
+	left : 16px;
+	background-color: #f4f4f4;
+	color: #5d5d5d;
+	font-size: 13px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.truckTimeDetailsContainerClass	{
+	position : relative;
+	top : 15%;
+	height : 68px;
+	width : 267px;
+}
+.truckETAclass	{
+	/*height : 68px;
+	width : 100px;
+	float : left;
+	border-radius: 0px 34px 34px 0px;
+	background-color: #219256;
+	color:#ffffff;
+	font-size: 20px;*/
+	height : 70px;
+	width : 230px;
+	float : left;
+	border-radius: 34px 34px 34px 34px;
+	background-color: #219256;
+	color:#ffffff;
+	font-size: 16px;
+	margin-left: 18px;
+}
+.truckTimeclass	{
+	margin-left : 34px;
+	height : 64px;
+	width : 195px;
+	border-radius: 34px 34px 34px 34px;
+	border : 2px solid rgba(255, 255, 255, .35);
+}
+
+
+.truckDetailsClass	{
+	box-shadow: 0 0 9px 1px #888;
+	border-radius: 5px 5px 0px 0px;
+	width : 267px;
+	height : 150px;
+}
+.truckTemperatureClass,.truckHumidityClass,.truckAirQualityClass	{
+	background-color : #ffffff;
+	height : 45px;
+	width : 267px;
+
+}
+.truckTemperatureClass,.truckHumidityClass,.truckAirQualityClass	{
+	border-bottom : 1px solid #eeeeee;
+	
+}
+.truckViewDetailsButtonContainerClass	{
+	background-color : #f3f3f3;
+	height : 50px;
+	width : 267px;
+	border-radius: 0px 0px 7px 7px;
+}
+
+
+button:focus {
+	outline:0;
+}
+
+#lastDivOfRow	{
+	margin-right: 0px;
+}
+
+.TruckID	{
+	font-size: 18px;
+	color:#ffffff;
+	left: 6%;
+    position: relative;
+    top: 5%;
+    width: 250px;
+}
+
+#dropdown	{
+	background-image: url("../images/dropdown.png");
+    background-repeat: no-repeat;
+    height: 35%;
+    left: 96%;
+    position: relative;
+    top: -108%;
+    width: 2%;
+}
+
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+    background: white url("../images/dropdown.png") no-repeat scroll 100% center;
+    border: 0 none !important;
+    color: #9e9fa8;
+    font-size: 14px;
+    left: 82%;
+    padding: 5px;
+    position: relative;
+    text-indent: 0.01px;
+    text-overflow: "";
+    top: -83%;
+    width: 140px;
+}
+
+
+.spanTruckType	{
+	font-size: 14px;
+}
+.spanETA	{
+	left: 33%;
+    position: relative;
+    top: 8%;
+    font-weight: bold;
+}
+
+.spanTime	{
+	font-size: 30px;
+	text-align: center;
+	left: 30%;
+	color:#ffffff;
+	position: relative;
+    
+}
+.spanDays	{
+	font-size: 20px;
+	
+}
+.spanHours	{
+	font-size: 19px;
+	left: 40%;
+	color:#ffffff;
+	margin-left: 27%;
+}
+
+
+
+
+
+/* color changing based on condition */
+
+#truckDetailsGood,#TD1	{
+	background-color: #26a662;
+}
+.truckDetailsWarning	{
+	background-color: #f1a523 !important;
+}
+.truckDetailsCritical	{
+	background-color: #fe5555 !important;
+}
+#truckDetailsOffline	{
+	background-color: #6b6d7a;
+}
+
+
+#truckDetailsGoodETA	{
+	background-color: #219256;
+}
+.truckDetailsWarningETA	{
+	background-color: #db8c34 !important;
+}
+.truckDetailsCriticalETA	{
+	background-color: #de4646 !important;
+}
+#truckDetailsOfflineETA	{
+	background-color: #5e606c;
+}
+
+
+#truckDetailsGoodTime 	{
+box-shadow: 0 0 9px 4px #219256;
+}
+#truckDetailsWarningTime 	{
+box-shadow: 0 0 9px 4px #db8c04;
+}
+#truckDetailsCriticalTime 	{
+box-shadow: 0 0 9px 4px #de4646;
+}
+#truckDetailsOfflineTime	{
+box-shadow: 0 0 9px 4px #5e606c;
+}
+
+
+.spanStatusGood		{
+	color:#489812;
+	font-weight: bold;
+}
+.spanStatusWarning	{
+	color:#f1a523;
+	font-weight: bold;
+}
+.spanStatusCritical	{
+	color:#fe5555;
+	font-weight: bold;
+}
+.spanStatusOffline	{
+	color:#6b6d7a;
+	font-weight: bold;
+}
+
+.assetDashboardContainer{
+
+	margin-top: 60px;
+	margin-left: 20px !important ;
+}
+
+.shelfLifeTimeShelf{
+	font-size : 13px;
+}
+
+.truckParameters{
+	margin-bottom: 10px;
+}
+
+.temperatureControl,.humidityControl,.gasControl{
+	display: none;
+	color: #5d5d5d;
+    font-size: 13px;
+    left: 55px;
+    position: relative;
+    top: 7px;
+    width: 200px;
+}
+/*.temperatureControlHide:hover{
+	display: none;
+}
+.temperatureControlHide:hover + .temperatureControl {
+    display: block;
+}*/
+
+/*.contentContainerClass:hover {
+    margin: 50px;
+    width: 400px;
+    height: 400px;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}*/
+
+#map{
+    height:500px; 
+    width:500px; 
+    box-shadow: 3px 3px 10px gray;
+    }
+#repeat{ 
+     display: inline;
+     }
+#country_container { 
+     width: 1000px; 
+     margin: 13px 3px 3px 0px; 
+     text-align: center; 
+     width: 85px; 
+     padding: 4px; 
+     display: inline-table;  
+     color: white; 
+     background-color: black; 
+     font-size: 12px; 
+     cursor: pointer;
+     border: 1px solid black; 
+     border-radius:13px; 
+     }
+#country_container:hover { 
+     box-shadow: 0px 0px 10px black;
+     background-color: gray; 
+     border: 1px solid gray; 
+     cursor: pointer; 
+     }
+#names { 
+     cursor: pointer; 
+       }
+
+      

@@ -1,0 +1,36 @@
+<!-- <blank-card id="my-card"></blank-card> -->
+
+
+<div ng-init="GetRoute()">
+<px-card header-text="Route" style="width:100%;height:550px;overflow-y:scroll">
+   <table border="0" cellpadding="0" cellspacing="3">
+        
+        <tr>
+            <td>
+                <div id="dvMap" style="width: 500px; height: 500px">
+                </div>
+            </td>
+            <td>
+                <div id="dvPanel" style="width: 500px; height: 500px">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</px-card>
+<px-card header-text="Temperature Chart">
+<px-chart>
+  <px-chart-series-line id="hpt-acc-position-cruise" data="{{data}}">
+  </px-chart-series-line>
+</px-chart>
+        
+</px-card>
+<px-card header-text="Humidity Chart">
+<px-chart>
+  <px-chart-series-line id="hpt-acc-position-cruise" data="{{data}}">
+  </px-chart-series-line>
+</px-chart>
+        
+</px-card>
+
+</div>

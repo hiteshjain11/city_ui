@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predix Seed</title>
+    <base href="/">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+    <script type='application/javascript' src='bower_components/px/dist/px.min.js'></script>
+
+    <!-- Just needed for IE -->
+    <script src="bower_components/es6-promise/dist/es6-promise.min.js"></script>
+
+    <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="polymer-loader.vulcanized.html">
+
+ <link rel="import" href="bower_components/px-login/px-login.html"/>
+
+    <link rel="import" href="bower_components/px-theme/px-app.html">
+    <!-- import component theme css variables. -->
+    <link rel="import" href="bower_components/px-theme/px-theme.html"/>
+  <link rel="import" href="bower_components/px-chart/px-chart.html"/>
+   <link rel="import" href="bower_components/px-popover-master/px-popover.html"/>
+
+
+
+
+
+
+
+
+    <!-- Just needed for IE -->
+    <script src="bower_components/es6-promise/dist/es6-promise.min.js"></script>
+
+    <link rel="import" href="bower_components/px-card/px-dashboard.html"/>
+    <link rel="import" href="bower_components/px-card/px-deck.html"/>
+    <link rel="import" href="bower_components/px-card/px-card.html"/>
+
+    <!-- <link rel="import" href="../polymer/polymer.html"/> -->
+    <!-- <link rel="import" href="../px-card/px-card.html"/> -->
+
+
+    <link rel="import" href="bower_components/px-context-browser/px-context-browser.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/time-series-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/widget-to-widget-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/hide-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/toggle-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/card-to-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/description-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/fetch-data-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/temperature-card.html"/>
+    <link rel="import" href="bower_components/px-alert-message-master/px-alert-message.html"/>
+
+    <link rel="import" href="bower_components/px-slider-master/px-slider.html"/>
+    <link rel="stylesheet" href="stylesheets/dashboard.css"/>
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.2&sensor=false" type='text/javascript'></script>
+     <style>
+      .navbar
+      {
+        background-color: #006cb7 !important;
+        z-index: 999 !important;
+        margin-top: -58px !important;
+        max-width: 140px !important;
+
+      }
+         a.selected
+         {
+            background-color: #242426 !important;
+         }
+
+       /*  .navbar--collapsed
+         {
+            max-width: 112px !important;
+         }*/
+
+         img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
+		 max-width: none !important;
+}
+
+     .modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+-webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+  background: #606061 !important;
+  color: #FFFFFF !important;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+      
+
+
+
+     </style>
+
+</head>
+
+<body unresolved class="app" data-ng-controller="MainCtrl">
+    <header role="banner" class="flex flex--middle" style="z-index:1 !important;
+    background-color: #ffffff !important;">
+        <div class="viewport" style="padding-left: 13% !important;">
+
+            <h1 style="color:#575757;font-size:20px;font-weight:bold">
+                 <img src="images/ge.png" style="height:29px;width:29px"></img>
+                 INVENTORY MONITORING
+            </h1>
+
+        </div>
+    </header>
+    <div class="viewport">
+        <div class="content-wrapper">
+            <px-app-nav class="navbar" nav-items="{{App.tabs}}" path-prefix="/" path-key="state">
+                <px-login class="sticky" style="max-width:140px !important"></px-login>
+            </px-app-nav>
+            <main class="u-pt-- u-pr-- u-pl--" role="main">
+                <section role="region" ui-view></section>
+            </main>
+        </div>
+    </div>
+    <footer class="flex flex--middle" role="contentinfo">
+        <div class="viewport">
+            <nav class="flex flex--right flex--middle" role="navigation">
+                <ul class="list-inline">
+                    <li class="u-mh-">
+                        <a href="http://www.ge.com/privacy" target="_blank">Privacy</a>
+                    </li>
+                    <li class="u-mh-">
+                        <a href="http://www.ge.com/terms" target="_blank">Terms</a>
+                    </li>
+                </ul>
+                <small class="u-ml+">©2015 General Electric</small>
+            </nav>
+        </div>
+    </footer>
+</body>
+<script>
+    // IE11 workaround: We can't rely on IE's load order for scripts that are loaded outside of require.js (might
+    //  be an issue with the web components polyfill), so we wait for the HTMLImportsLoaded event to ensure our
+    //  web components' scripts have loaded.
+    window.addEventListener('HTMLImportsLoaded', function(e) {
+        var elScript = document.createElement('script');
+        elScript.setAttribute('src', 'bower_components/requirejs/require.js');
+        elScript.setAttribute('data-main', 'scripts/bootstrapper.js');
+        document.getElementsByTagName('body')[0].appendChild(elScript);
+    });
+</script>
+
+</html>

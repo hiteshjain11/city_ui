@@ -1,0 +1,374 @@
+<!-- <px-context-browser
+    initial-contexts='{{initialContexts}}'
+    handlers="ngScope:handlers"
+    opened-item-name="Select Context">
+</px-context-browser> -->
+
+<!-- <px-dashboard selected-deck="{{selectedDeck}}" context="{{context}}"></px-dashboard> -->
+
+<!-- <description-card
+  id="dashboard-description-card"
+  head="Dashboard">
+</description-card> -->
+<div ng-show="allshow">
+ <px-card style="height:auto;background-image: url('images/headerbg.png');background-size:cover;margin-bottom:0px;">
+ <div class= "layout" style="" ng-init="getUpdates()">
+  <div class="" style="padding-left:8px;">
+                                    <div style="display:inline-block;">
+                                        <div style="display:inline-block;padding-top:10px;padding-left:25px;">
+                                        <img  src="images/active_icon.png" style=""></img></div>
+                                        <div class="title" style="display:inline-block;padding-top:10px;padding-left:9px;width:30px;color:white;font-size:40px">{{active}}</div>
+                                        <div class="content">
+
+                                            <div style="display:inline-block;padding-left:82px;font-size:20px;color:white">
+                                              Total</div>
+                                        </div>
+
+                                    </div>
+                                     <div style="display:inline-block;margin-left:59px"><img src="images/saperator.png" ></img></div>
+                                </div>
+
+                                      <div class="" style="padding-left:8px;">
+                                    <div style="display:inline-block;">
+                                        <div style="display:inline-block;padding-top:10px;padding-left:25px;">
+                                        <img  src="images/good_icon.png" style=""></img></div>
+                                        <div class="title" style="display:inline-block;padding-top:10px;padding-left:9px;width:30px;color:white;font-size:40px">{{good}}</div>
+                                        <div class="content">
+
+                                            <div style="display:inline-block;padding-left:82px;font-size:20px;color:white">
+                                              Good</div>
+                                        </div>
+
+                                    </div>
+                                     <div style="display:inline-block;margin-left:59px"><img src="images/saperator.png" ></img></div>
+                                </div>
+
+
+                                       <div class="" style="padding-left:8px;">
+                                    <div style="display:inline-block;">
+                                        <div style="display:inline-block;padding-top:10px;padding-left:25px;">
+                                        <img  src="images/average_icon.png" style=""></img></div>
+                                        <div class="title" style="display:inline-block;padding-top:10px;padding-left:9px;width:30px;color:white;font-size:40px">{{average}}</div>
+                                        <div class="content">
+
+                                            <div style="display:inline-block;padding-left:82px;font-size:20px;color:white">
+                                              Average</div>
+                                        </div>
+
+                                    </div>
+                                     <div style="display:inline-block;margin-left:59px"><img src="images/saperator.png" ></img></div>
+                                </div>
+
+
+
+
+
+
+                                 <div class="" style="padding-left:8px;">
+                                    <div style="display:inline-block;">
+                                        <div style="display:inline-block;padding-top:10px;padding-left:25px;">
+                                        <img  src="images/critical_icon.png" style=""></img></div>
+                                        <div class="title" style="display:inline-block;padding-top:10px;padding-left:9px;width:30px;color:white;font-size:40px">{{critical}}</div>
+                                        <div class="content">
+
+                                            <div style="display:inline-block;padding-left:82px;font-size:20px;color:white">
+                                              Critical</div>
+                                        </div>
+
+                                    </div>
+                                     <div style="display:inline-block;margin-left:59px"><img src="images/saperator.png" ></img></div>
+                                </div>
+
+
+                                 <div class="" style="padding-left:8px;">
+                                    <div style="display:inline-block;">
+                                        <div style="display:inline-block;padding-top:10px;padding-left:25px;">
+                                        <img  src="images/offline_icon.png" style=""></img></div>
+                                        <div class="title" style="display:inline-block;padding-top:10px;padding-left:9px;width:30px;color:white;font-size:40px">1</div>
+                                        <div class="content">
+
+                                            <div style="display:inline-block;padding-left:82px;font-size:20px;color:white">
+                                              Offline</div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</px-card>
+
+<px-card  style="margin:0px 0px 0px 0px;height:78px;background-color: #f3f3f3;">
+  <div style="padding-top: 10px;">
+   <!--  <div id="serach" style="
+    padding-top: 30px;display:inline-block
+   ">
+      <input type="search" style="margin-top:-60px;height:34px;width:300px;" placeholder="search"></input>
+
+    </div>  -->
+
+   <!--   <div id="select" style="
+    padding-top: 30px;padding-left:10px;display:inline-block;
+   ">
+    <select style="height:34px;width:300px;">
+  <option value="volvo">View All Vehicles</option>
+  <option value="saab">View Good Vehicles</option>
+  <option value="vw">View Critical Vehicles</option>
+  <option value="audi" selected>View Offline Vehicles</option>
+</select>
+
+    </div> -->
+
+    <div id="view" style="
+    padding-top:10px;padding-left:10px;display:inline-block;padding-left:97%;
+   ">
+
+   <img src="images/tileview_icon.png" ng-click="showlist()"></img>
+
+   </div>
+
+  </div>
+
+</px-card>
+<px-card ng-init="mapdashBoard()"  style="margin:0px 0px 0px 0px">
+
+
+    <div  id="map" style="height: 640px;width:100%" ng-show="viewshow">
+          </div>
+         <div  ng-show="listshow">
+           <div class= "layout" ng-repeat="tr in allTrucksDetails" style="padding-left:40px;display:inline-block" >
+  <div id="truck" class="truck" style="padding-top:10px;background-image: url('images/{{tr.icon}}.png');height:310px;width:240px;box-shadow: 3px 3px  3px 3px #888888;margin-top:15px" >
+    <p style="color:#fff;font-size:18px;margin-left: 13px;"> Truck ID :  {{tr.orgid}} </p>
+    <p style="color:#fff;font-size:13px;margin-left: 13px;margin-top:-12px">Company Name:  {{tr.carrier}} </p>
+    <p style="color:#fff;font-size:18px;margin-left: 13px;">ETA</p>
+    <p style="color:#fff;font-size:35px;margin-top: -16px;
+       margin-left: 13px;">{{tr.eta}} Hrs</p>
+
+    <p style="color:grey;font-size:14px;
+       margin-left: 13px;">Temperature Status :<span style="font-weight:bold;color:{{tr.tempc}}">{{tr.temp}}</span></p>
+    <p style="border-bottom: 1px solid grey;margin-top: -11px;
+    margin-bottom: -5px;"></p>
+    <p style="color:grey;font-size:14px;
+       margin-left: 13px;">Humidity Status :<span style="font-weight:bold;color:{{tr.humidc}}">{{tr.humid}}</span></p>
+    <p style="border-bottom: 1px solid grey;margin-top: -11px;
+    margin-bottom: -5px;"></p>
+        <p style="color:#5d5d5d;font-size:14px;
+       margin-left: 13px;">Shelf life: {{tr.slife}} Hrs</p>
+
+    <p style="border-bottom: 1px solid grey;margin-top: -11px;
+    margin-bottom: -5px;"></p>
+<p>
+<div>
+   <div style="display:inline-block">
+
+    <button id="{{tr.orgid}}" type="button" name="button" style="margin-top: -12px;width:101px;height:26px;border:2px solid #c8c8c8;font-size:13px;border-radius:15px;background:#fff;margin-left:13px" ng-click="showAlllist(tr.orgid)" ng-disabled="tr.showDetails"> View details</button>
+
+  </div>
+
+  <div style="display:inline-block">
+     
+    <a href="#openModal" id="{{tr.orgid}}" ng-show="tr.showSettings"><button type="button"  name="button" style="margin-top: -12px;width:101px;height:26px;border:2px solid #c8c8c8;font-size:13px;border-radius:15px;background:#fff;margin-left:13px" ng-click="controlCargoRoot(tr.index)">Settings</button></a> 
+  </p>
+
+  </div>
+
+  <div id="openModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Inventory Settings</h2>
+    <p><a href="#ackModal"><p><button type="button"  name="button" style="margin-top: -12px;width:101px;height:26px;border:2px solid #c8c8c8;font-size:13px;border-radius:15px;background:#fff;margin-left:13px">ACK</button></a></p>
+
+     <p><a href="#changeModal"><p><button type="button"  name="button" style="margin-top: -12px;width:101px;height:26px;border:2px solid #c8c8c8;font-size:13px;border-radius:15px;background:#fff;margin-left:13px" ng-click="controlCargo(tr.index)">Change</button></a></p>
+    
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+
+
+
+<div id="ackModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+   
+    <p>Status Acknowledged.</p>
+
+    
+  </div>
+</div>
+
+<div id="changeModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+   
+    <p>Status Changed.</p>
+
+    
+  </div>
+</div>
+
+
+    <!-- <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+         <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+         <label id="names" >{{marker.title}}</label></a>
+    </div> -->
+
+    <!-- <div class="contentContainerClass " id="" emit-last-repeater-element style="padding-top:2%">
+          <div class="truckDetailsClass truckDetails"
+          id="" style="background-color: rgb(38, 166, 98);">
+            <div class="TruckID" id="TruckID">Truck ID: <span id="TruckID_1">CARXG1</span><br>
+            <span class="spanTruckType">Cargo: YRC Worldwide</span>
+             </br>
+            <span class="spanTruckType">Customer:  Kroger</span>
+
+
+
+             </br>
+            <span class="spanTruckType">Source:  San Fransico</span>
+
+             </br>
+            <span class="spanTruckType">Destination:  Cincinnati</span>
+
+
+            </div> -->
+           <!--  <div class="truckTimeDetailsContainerClass" id="">
+              <div class="truckETAclass truckDetails ETA"
+
+              id="TE1" style="background-color: rgb(33, 146, 86);">
+
+              <span class="spanETA">Shelf Life<br></span>
+              <span class="spanTime">Shelf Life<span class="spanDays">days</span></span>
+              <span class="spanHours"></span>
+              </div>
+
+              <!-- <div class="truckTimeclass" id="TTime2"><span class="spanTime truckTimeclass">{{cargo.shelfLife}}<span class="spanHours">days</span></span></div> -->
+
+         <!--  </div>
+
+
+    </div>
+ -->
+
+
+
+
+    <!--  <div class="contentContainerClass " id="" emit-last-repeater-element style="padding-top:2%">
+          <div class="truckDetailsClass truckDetails"
+          id="" style="background-color: rgb(38, 166, 98);">
+            <div class="TruckID" id="TruckID">Truck ID: <span id="TruckID_1">CARXG2</span><br>
+            <span class="spanTruckType">Cargo: YRC Worldwide</span>
+             </br>
+            <span class="spanTruckType">Customer:  HEB</span>
+
+             </br>
+            <span class="spanTruckType">Source:  HEB</span>
+
+             </br>
+            <span class="spanTruckType">Destination:  Houston</span>
+
+            </div>
+
+
+          </div>
+
+
+    </div> -->
+
+
+</px-card>
+
+</div>
+
+<!-- <blank-card id="my-card"></blank-card> -->
+
+
+<div  ng-show="detailShow">
+
+ <px-card style="height:auto;background-image: url('images/headerbg.png');background-size:cover;margin-bottom:0px;">
+ <div class= "layout" style="">
+       <div class="" style="padding-left:8px;">
+                                    <div style="display:inline-block;">
+                                        <div style="display:inline-block;padding-top:10px;padding-left:25px;">
+                                        <img  src="images/offline_icon.png" style=""></img></div>
+                                        <div class="title" style="display:inline-block;padding-top:10px;padding-left:9px;width:30px;color:white;font-size:40px">{{trorgID}}</div>
+                                        <div class="content">
+
+                                            <div style="display:inline-block;padding-left:82px;font-size:20px;color:white">
+                                              </div>
+                                        </div>
+
+                                    </div>
+                                     <div style="display:inline-block;margin-left:59px"></div>
+                                </div>
+</div>
+
+</px-card>
+
+<div id="view" style="
+    padding-top:10px;padding-left:10px;display:inline-block;padding-left:97%;
+   ">
+
+   <img src="images/tileview_icon.png" ng-click="showAlllviewist()"></img>
+
+   </div>
+
+<!--    <div>
+<px-card header-text="Route" style="width:100%;height:550px;overflow-y:scroll">
+   <table border="0" cellpadding="0" cellspacing="3">
+
+        <tr>
+            <td>
+                <div id="dvMap" style="width: 500px; height: 500px">
+                </div>
+            </td>
+            <td>
+                <div id="dvPanel" style="width: 500px; height: 500px">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</px-card>
+</div> -->
+
+<px-card header-text="Temperature Chart">
+<px-chart>
+  <px-chart-series-line id="hpt-acc-position-cruise" data="{{data}}">
+  </px-chart-series-line>
+</px-chart>
+
+</px-card>
+<px-card header-text="Humidity Chart">
+<px-chart>
+  <px-chart-series-line id="hpt-acc-position-cruise" data="{{dataHumid}}">
+  </px-chart-series-line>
+</px-chart>
+
+</px-card>
+
+
+</div>
+
+
+
+

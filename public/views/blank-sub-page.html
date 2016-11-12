@@ -1,0 +1,33 @@
+<style>
+  google-map {
+    height: 450px;
+  }
+</style>
+
+<blank-card id="form"> Enter Start Address and Destination Address:
+
+<input placeholder="San Francisco" type="text" id="start" ng-model="start" style="width: 25%; height: 35px; text-align: center; text-shadow: lime; text-decoration: blink; font-family:sans-serif; color:navy; font-size: 18px" />
+
+<input placeholder="Mountain View" type="text" id="end" ng-model="end"   style="width: 25%; height: 35px; text-align: center; text-shadow: lime; text-decoration: blink; font-family:sans-serif; color:navy; font-size: 18px"  style="float: right" />
+
+
+</blank-card>
+                       
+ <google-map latitude="37.779" longitude="-122.3892" zoom="13" disable-default-ui></google-map>
+ <google-map latitude="31.779" longitude="-122.3892" zoom="13" disable-default-ui></google-map>
+ <google-map latitude="17.779" longitude="-122.3892" zoom="13" disable-default-ui>
+  </google-map>
+  <google-map-directions
+      start-address="{{start}}"
+      end-address="{{end}}"></google-map-directions>
+      
+<script>
+	
+		var gMap = document.querySelector('google-map');
+		gMap.addEventListener('api-load', function(e) {
+	  document.querySelector('google-map-directions').startAddress='San Francisco';
+	  document.querySelector('google-map-directions').endAddress='Mountain View';
+  document.querySelector('google-map-directions').map = this.map;
+});
+
+</script>
