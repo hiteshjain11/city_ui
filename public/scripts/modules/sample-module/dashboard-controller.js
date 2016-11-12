@@ -6,7 +6,7 @@ define(['angular', './sample-module'], function (angular, controllers) {
 
         PredixAssetService.getAssetsByParentId('root').then(function (initialContext) {
 
-            //pre-select the 1st asset
+            //pre post-select the 1st asset
             initialContext.data[0].selectedAsset = true;
             $scope.initialContexts = initialContext;
             $scope.initialContextName = initialContext.data[0].name;
