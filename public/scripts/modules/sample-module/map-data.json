@@ -1,0 +1,98 @@
+[{
+        "Lat":  37.747810,
+        "Long": -121.947997,
+        "Assetid": "BIN_001",
+        "Type": "Garbage",
+        "Status": "GREEN",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    },{
+        "Lat": 37.748471,
+        "Long": -121.950283,
+        "Assetid": "BIN_001",
+        "Type": "Garbage",
+        "Status": "RED",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    },{
+        "Lat":  37.745516,
+        "Long": -121.947452,
+        "Assetid": "BIN_001",
+        "Type": "Garbage",
+        "Status": "ORANGE",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    },
+
+    {
+        "Lat": 37.749566,
+        "Long": -121.947493,
+        "Assetid": "BIN_002",
+        "Type": "Tank",
+        "Status": "GREEN",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    }, {
+        "Lat": 37.749947,
+        "Long": -121.941946,
+        "Assetid": "BIN_002",
+        "Type": "Tank",
+        "Status": "RED",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    },
+
+    {
+        "Lat": 37.748353,
+        "Long": -121.942708,
+        "Assetid": "BIN_003",
+        "Type": "Hospital",
+        "Status": "GREEN",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    }, {
+        "Lat": 37.746568,
+        "Long": -121.947835,
+        "Assetid": "BIN_003",
+        "Type": "Hospital",
+        "Status": "RED",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    },{
+        "Lat": 37.746568,
+        "Long": -121.943461,
+        "Assetid": "BIN_003",
+        "Type": "Trucks",
+        "Status": "GREEN",
+        "params": {
+            "position": 5,
+            "airquality": "30%"
+        }
+    },
+
+    {
+        "Lat": 37.750911,
+        "Long": -121.946379,
+        "Assetid": "BIN_004",
+        "Type": "Trucks",
+        "Status": "ORANGE",
+        "params": {
+            "position": 5,
+            "airquality": "50%"
+        }
+    }
+]
