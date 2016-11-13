@@ -1,0 +1,30 @@
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "postgres": [
+   {
+    "credentials": {
+     "ID": 0,
+     "binding_id": "fab30014-65bd-47b9-9268-17c2c7391855",
+     "database": "d08cbe7bf0b134a9584b1cb48b9e9019e",
+     "dsn": "host=10.72.6.143 port=5432 user=u8e2f710b76b84b0aa705a8f7f0ba18b2 password=9d553b4823be4a23806e7d2661048fb1 dbname=d08cbe7bf0b134a9584b1cb48b9e9019e connect_timeout=5 sslmode=disable",
+     "host": "10.72.6.143",
+     "instance_id": "5ffdb639-4e96-42e4-9490-8825999903b7",
+     "jdbc_uri": "jdbc:postgresql://10.72.6.143:5432/d08cbe7bf0b134a9584b1cb48b9e9019e?user=u8e2f710b76b84b0aa705a8f7f0ba18b2\u0026password=9d553b4823be4a23806e7d2661048fb1\u0026ssl=false",
+     "password": "9d553b4823be4a23806e7d2661048fb1",
+     "port": "5432",
+     "uri": "postgres://u8e2f710b76b84b0aa705a8f7f0ba18b2:9d553b4823be4a23806e7d2661048fb1@10.72.6.143:5432/d08cbe7bf0b134a9584b1cb48b9e9019e?sslmode=disable",
+     "username": "u8e2f710b76b84b0aa705a8f7f0ba18b2"
+    },
+    "label": "postgres",
+    "name": "pg-TCSSmartcityNotification",
+    "plan": "shared-nr",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "rdpg",
+     "postgresql"
+    ],
+    "volume_mounts": []
+   }
+  ]

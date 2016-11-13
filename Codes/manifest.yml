@@ -7,7 +7,7 @@
 
 applications:
   - name: TCSSmartcityNotification
-    #buildpack: https://github.com/cloudfoundry-community/asp.net5-buildpack.git
+    buildpack: java_buildpack
     #path: dist
     memory: 640M
     # stack: cflinuxfs2
