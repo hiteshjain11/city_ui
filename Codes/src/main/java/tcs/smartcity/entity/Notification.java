@@ -20,6 +20,7 @@ public class Notification {
     private String notificationassignedto;
     private String notificationtext;
     private String notificationstatus;
+    private String notificationtype;
     private Date notificationtime;
     
     
@@ -64,6 +65,12 @@ public class Notification {
 	}
 	public void setNotificationtime(Date notificationtime) {
 		this.notificationtime = notificationtime;
+	}
+	public String getNotificationtype() {
+		return notificationtype;
+	}
+	public void setNotificationtype(String notificationtype) {
+		this.notificationtype = notificationtype;
 	}
     
     
