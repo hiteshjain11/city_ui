@@ -1,5 +1,2 @@
-tcs\smartcity\repository\AssettsRepository.class
 tcs\smartcity\PredixSpringBootAppApplication.class
-tcs\smartcity\controller\AssettsController.class
-tcs\smartcity\entity\Assetts.class
 tcs\smartcity\jpasupport\HstoreUserType.class
