@@ -67,9 +67,10 @@ function onloadMarkers(dataMain){
          var marker;
          var infoWindow = new google.maps.InfoWindow();
 
+
   for (var i = 0; i < $scope.newMapData.length; i++) {
         var position = new google.maps.LatLng($scope.newMapData[i].lat, $scope.newMapData[i].longitude);
-        var dataObject = $scope.mapData[i].params;
+        var dataObject = $scope.mapData[i];
         var iconSrc = "../images/icon_"+$scope.newMapData[i].type+"_"+$scope.newMapData[i].status+".png";
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(position);
@@ -81,20 +82,29 @@ function onloadMarkers(dataMain){
             dataObject: dataObject
         });
 
-        // Info Window Content
-        var updateair;
-        var dataFinal = dataObject.params;
-
-        var infoWindowContent = '<div class="info_content">'+ '<div>Air Quality : <span id="airquality"></span></div>'+'<div>Position : <span id="position"></span></div>'+'</div">';
         $scope.airquality = $scope.newMapData[i]["params"];
         // Allow each marker to have an info window
         google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
             return function() {
+
+              var finalObj = marker.dataObject.params;
+              var assetid = marker.dataObject.assetsid;
+              var infoWindowContent ;
+
+              infoWindowContent = '<div>'+'<span>Asset ID : <span>'+'<span>'+assetid+'<span>'+'</div">';
+
+
+
+              for (var key in finalObj) {
+                infoWindowContent += '<div class="info_content">'+'<span>'+key+'<span>'+' : '+'<span>'+finalObj[key]+'<span>'+'</div">';
+              }
+
+              '<div class="info_content">'+ '<div>Air Quality : <span id="airquality"></span></div>'+'<div>Position : <span id="position"></span></div>'+'</div">';
+
+
                 infoWindow.setContent(infoWindowContent);
                 infoWindow.open(map, marker);
-                updateair = marker.dataObject.airquality;
-                angular.element('#airquality').text(marker.dataObject.airquality);
-                angular.element('#position').text(marker.dataObject.position);
+
             }
         })(marker, i));
     }
