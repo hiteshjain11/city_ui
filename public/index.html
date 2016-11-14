@@ -35,7 +35,7 @@
 
 
 
-    <!-- Just for IE -->
+    <!-- Just needed for IE -->
     <script src="bower_components/es6-promise/dist/es6-promise.min.js"></script>
 
     <link rel="import" href="bower_components/px-card/px-dashboard.html"/>
@@ -80,7 +80,7 @@
          }*/
 
          img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
-		 max-width: none !important;
+     max-width: none !important;
 }
 
      .modalDialog {
@@ -138,7 +138,192 @@ transition: opacity 400ms ease-in;
 .close:hover { background: #00d9ff; }
 
 
+/*updated styles*/
+.panel{
+    font-weight:normal !important; max-width: 400px; background: rgba(0, 0, 0, 0.7) !important; padding: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px;
+}
 
+.panel ul{
+  display: block !important;
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.panel ul li{
+  display:block !important;
+  width:100%;
+  text-decoration:none;
+}
+
+.panel ul li img{
+  width:15px;
+}
+
+.region-head{
+  color:#fff; background:rgba(0, 0, 0, 0.8) !important;
+  padding: 10px 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.SelectedRegin{
+  color:#fff !important;
+}
+
+#regin-panel li {
+    padding: 10px;
+}
+#regin-panel li a{
+    vertical-align: top;
+    text-decoration:none;
+    color:#757575;
+}
+
+#regin-panel li a img{
+    margin-right:15px;
+}
+
+
+
+.map-selected{
+  color: yellow !important;
+}
+
+.map-selected a{
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.navbar {
+    background-color: #003264 !important;
+        top: 60px !important;
+  }
+
+  #maptoggle li{
+
+  }
+
+  #maptoggle li a{
+    text-decoration: none;
+    color:grey;
+    padding-left: 28px;
+  }
+
+  .panelbg_0{
+    background:url("images/toggle_normal.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+
+  .panelbg_0.map-selected{
+    background: url("images/toggle_active.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+
+  .panelbg_1.map-selected{
+    background: url("images/toggle_active.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+  .panelbg_1{
+    background:url("images/toggle_normal.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+
+
+  .panelbg_2.map-selected{
+    background: url("images/toggle_active.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+  .panelbg_2{
+    background:url("images/toggle_normal.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+
+  .panelbg_3.map-selected{
+    background: url("images/toggle_active.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+  .panelbg_3{
+    background:url("images/toggle_normal.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 15px !important;
+    background-position:left center !important;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #legend-rating ul{
+    display:inline-block !important;
+    float: left;
+    width:120px;
+    height:30px;
+    background:none;
+  }
+  #legend-rating ul li{
+    display:inline-block !important;
+    float: left;
+    width:20px;
+    height:5px;
+    background:red;
+    margin-left:5px;
+        padding: 0px;
+  }
+
+  .SelectedRegin{
+    color:#fff !important;
+  }
+
+  .greenc{
+    background:#82c94f  !important;
+  }
+
+  .orangec{
+    background:#f17a00  !important;
+  }
+
+  .brightredc{
+    background: #e80002 !important;
+  }
+
+  .darkredc{
+    background:  #9d1018 !important;
+  }
+
+  a.selected {
+      background-color: #00a4dc !important;
+  }
 
      </style>
 
@@ -146,15 +331,38 @@ transition: opacity 400ms ease-in;
 
 <body unresolved class="app" data-ng-controller="MainCtrl">
     <header role="banner" class="flex flex--middle" style="z-index:1 !important;
-    background-color: #ffffff !important;">
-        <div class="viewport" style="padding-left: 13% !important;">
+    background-color: #000 !important;">
+        <div class="viewport" style="padding-left: 1% !important;">
 
-            <h1 style="color:#575757;font-size:20px;font-weight:bold">
-                 <!-- <img src="images/ge.png" style="height:29px;width:29px"></img> -->
-                 City of Tomorrow
+            <h1 style="color:#fff;font-size:20px;font-weight:bold">
+                 <img src="images/tata-logo.png" style="height:29px;width:29px"></img>
+                 <span>City of Tomorrow</span> <span> <span style="font-size:12px !important; margin-left:10px;">    Powered by Predix</span>
             </h1>
 
         </div>
+
+        <ul style="    margin-left: auto;" class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#" style="background: none !important;"><img style="width:45px;height:auto; border-radius:22px;" class="navbar-avatar" src="images/pic-profile.png" alt="Profile"> </a>
+          </li>
+        </ul>
+        <div class="margin-left: auto;">
+          <table>
+            <tr>
+              <td style="color:#fff;font-size:13px;padding-left: 20px;padding-right: 20px;padding-top:20px;">
+                Welcome
+              </td>
+            </tr>
+
+            <tr>
+              <td style="color:#fff;font-size:10px;padding-left: 20px;padding-right: 20px;">
+                John Doe, CMO
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
     </header>
     <div class="viewport">
         <div class="content-wrapper">
@@ -170,14 +378,14 @@ transition: opacity 400ms ease-in;
         <div class="viewport">
             <nav class="flex flex--right flex--middle" role="navigation">
                 <ul class="list-inline">
-                    <li class="u-mh-">
+                    <li style="display:none"  class="u-mh-">
                         <a href="http://www.ge.com/privacy" target="_blank">Privacy</a>
                     </li>
-                    <li class="u-mh-">
+                    <li style="display:none"  class="u-mh-">
                         <a href="http://www.ge.com/terms" target="_blank">Terms</a>
                     </li>
                 </ul>
-                <small class="u-ml+">©2015 General Electric</small>
+                <small style="display:none" class="u-ml+">©2015 General Electric</small>
             </nav>
         </div>
     </footer>

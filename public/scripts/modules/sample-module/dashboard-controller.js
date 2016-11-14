@@ -1,79 +1,152 @@
 define(['angular', './sample-module'], function (angular, controllers) {
     'use strict';
 
-    // Controllers definition
-     controllers.controller('DashboardCtrl', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory) {
 
-//  map options
-       // 
 
-       // var mapOptions = {
-       //     zoom: 4,
-       //     center: new google.maps.LatLng(29.2624, 75.96585),
-       //     mapTypeId: google.maps.MapTypeId.TERRAIN
-       // }
 
+    // Controller definition
+     controllers.controller('DashboardCtrl', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$filter', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$filter) {
+
+
+
+
+
+
+    }]);
+
+
+
+
+
+
+
+
+
+    // Controller definition
+     controllers.controller('BlankpageCtrl', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$filter', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$filter) {
+
+
+
+
+       $scope.mapDataTypes = [
+        { text: 'Hospital',selected:true },
+        { text: 'Truck',selected:true },
+        { text: 'Tank',selected:true },
+        { text: 'Garbage',selected:true }
+    ];
+$scope.ratingPanel = true;
+
+$scope.legendBar = function(){
+  $scope.ratingPanel = !$scope.ratingPanel;
+}
+
+    $scope.toggleMapDateTypes = function (item) {
+        item.selected = !item.selected;
+        $scope.updateMapData();
+
+    };
+
+
+function onloadMarkers(dataMain){
+  if(dataMain){
+    $scope.newMapData = dataMain;
+  }else{
+    $scope.newMapData = $scope.mapData;
+  }
+
+  //  map options
         var mapOptions = {
            zoom: 17,
            center: new google.maps.LatLng(37.7473988,-121.9464932),
            mapTypeId: google.maps.MapTypeId.SATELLITE
-       }
+        }
 
-// map initialiazation
-       var map = new google.maps.Map(document.getElementById('predixMap'), mapOptions);
-       var bounds = new google.maps.LatLngBounds();
-       var marker;
+  // map initialiazation
+         var map = new google.maps.Map(document.getElementById('predixMap'), mapOptions);
+         var bounds = new google.maps.LatLngBounds();
+         var marker;
+         var infoWindow = new google.maps.InfoWindow();
 
-       dataFactory.getMapData()
-       .then(function(response) {
-           $scope.mapData = response.data;
-           console.log($scope.mapData);
+  for (var i = 0; i < $scope.newMapData.length; i++) {
+        var position = new google.maps.LatLng($scope.newMapData[i].lat, $scope.newMapData[i].longitude);
+        var dataObject = $scope.mapData[i].params;
+        var iconSrc = "../images/icon_"+$scope.newMapData[i].type+"_"+$scope.newMapData[i].status+".png";
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend(position);
 
-         for (var i = 0; i < $scope.mapData.length; i++) {
-               var position = new google.maps.LatLng($scope.mapData[i].Lat, $scope.mapData[i].Long);
-               var dataObject = $scope.mapData[i].params;
-               console.log($scope.mapData[i]);
-               var iconSrc = "../images/icon_"+$scope.mapData[i].Type+"_"+$scope.mapData[i].Status+".png";
-               var bounds = new google.maps.LatLngBounds();
-               bounds.extend(position);
-               marker = new google.maps.Marker({
-                   position: position,
-                   map: map,
-                   icon: iconSrc,
-                  //  label: {
-                  //      text: plotid,
-                  //      color: "#fff"
-                  //  },
-                   dataObject: dataObject
-               });
-               console.log(marker);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            icon: iconSrc,
+            dataObject: dataObject
+        });
 
-               // Allow each marker to have an info window
-              //  google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
-              //      return function() {
-              //          infoWindow.setContent(infoWindowContent[i][0]);
-              //          infoWindow.open(map, marker);
-              //          console.log(marker.dataObject)
-              //      }
-              //  })(marker, i));
+        // Info Window Content
+        var updateair;
+        var dataFinal = dataObject.params;
 
-               // Automatically center the map fitting all markers on the screen
-              //  map.fitBounds(bounds);
-           }
+        var infoWindowContent = '<div class="info_content">'+ '<div>Air Quality : <span id="airquality"></span></div>'+'<div>Position : <span id="position"></span></div>'+'</div">';
+        $scope.airquality = $scope.newMapData[i]["params"];
+        // Allow each marker to have an info window
+        google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent);
+                infoWindow.open(map, marker);
+                updateair = marker.dataObject.airquality;
+                angular.element('#airquality').text(marker.dataObject.airquality);
+                angular.element('#position').text(marker.dataObject.position);
+            }
+        })(marker, i));
+    }
 
-       }, function(error) {
-           $scope.mapstatus = 'Unable to load map data: ';
-       });
-
-
-// Get Plot data
+}
 
 
 
+dataFactory.getMapData()
+.then(function(response) {
+    $scope.mapData = response.data;
+            onloadMarkers();
+}, function(error) {
+    $scope.mapstatus = 'Unable to load map data: ';
+});
 
 
 
 
+
+
+  function flatten(arr) {
+    return arr.reduce(function (flat, toFlatten) {
+      return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+    }, []);
+  }
+
+
+$scope.updateMapData = function(){
+
+  var testDK = [];
+  for(var mm=0;mm<$scope.mapDataTypes.length;mm++){
+    if($scope.mapDataTypes[mm].selected == true){
+      testDK.push($scope.mapDataTypes[mm].text);
+    }
+  }
+  console.log(testDK);
+
+
+  var ffdata = [];
+  for(var kk=0;kk<testDK.length;kk++){
+    ffdata[kk] = $filter('filter')($scope.mapData, {type:testDK[kk]});
+  }
+
+  var resultkk = [].concat.apply([], ffdata);
+  var newMapData = flatten(ffdata);
+  console.log(newMapData);
+
+  onloadMarkers(newMapData);
+
+
+}//main  scope update function end
 
 
 
@@ -85,7 +158,10 @@ define(['angular', './sample-module'], function (angular, controllers) {
 //   Factory DATA for http call
     controllers.factory('dataFactory', ['$http', function($http) {
 
-      var URL_MAP_DATA = 'scripts/modules/sample-module/map-data.json';
+      // var URL_MAP_DATA = 'scripts/modules/sample-module/map-data.json';
+      var URL_MAP_DATA = 'https://tcssmartcityassettimeseries.run.aws-usw02-pr.ice.predix.io/allAssetts';
+
+
 
       var dataFactory = {};
 

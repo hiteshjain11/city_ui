@@ -1,36 +1,82 @@
-<!-- <blank-card id="my-card"></blank-card> -->
+<!-- google map component starts here -->
+<px-card style="    min-height: calc(100vh - 8rem);margin:0px 0px 0px 0px; padding:0px;position:relative;">
+    <div id="predixMap" style="width:100%;    min-height: calc(100vh - 8rem);">
+
+    </div>
 
 
-<div ng-init="GetRoute()">
-<px-card header-text="Route" style="width:100%;height:550px;overflow-y:scroll">
-   <table border="0" cellpadding="0" cellspacing="3">
-        
-        <tr>
-            <td>
-                <div id="dvMap" style="width: 500px; height: 500px">
+    <div style="position: fixed;
+    top: 200px;
+    width: 140px;
+    height: 180px;
+    left: 0;
+    z-index: 9999;
+    background: #00a4dc;">
+        <ul id="maptoggle" style="list-style:none;margin:0px; padding:0px;    margin-left: 20px;">
+            <li style="padding:10px;" class="panelbg_{{$index}} map-selected" ng-repeat="maptype in mapDataTypes track by $index" ng-class="{'map-selected':maptype.selected}">
+                <a style="cursor:pointer;padding-left:28px;" class="{{maptype}}" ng-click="toggleMapDateTypes(maptype)" href="#"></img> {{maptype.text}} </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="panel" style="border-top-left-radius: 10px;
+    border-top-right-radius: 10px;margin-left: 10px !important;position:absolute;bottom:0;left:0;width: 370px; background: rgba(0, 0, 0, 0.5) !important; padding: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+        <div class="region-head">
+            Legend
+            <span style="float:right;" ng-click="legendBar()"><img src="images/darrow.png" style="cursor:pointer; width:15px;height:auto !important;" alt="" /></span>
+        </div>
+        <ul id="regin-panel" ng-show="ratingPanel">
+            <li class="SelectedRegin" style="height:50px;">
+                <div style="display: inline-block; float: left;width: 140px;">
+                    <a href="#" style="color:#fff !important"> <img src="images/Garbage.png" alt="" style="width:16px;height:auto;" /> Garbage bin</a>
                 </div>
-            </td>
-            <td>
-                <div id="dvPanel" style="width: 500px; height: 500px">
+                <div id="legend-rating">
+                  <span style="display:inline-block;float:left">Empty</span>
+                  <ul style="margin-top: 8px !important;
+    margin-left: 8px !important;">
+                    <li class="greenc"></li>
+                    <li class="orangec"></li>
+                    <li class="brightredc"></li>
+                    <li class="darkredc"></li>
+                  </ul>
+                    <span style="display:inline-block;float:left">Full</span>
                 </div>
-            </td>
-        </tr>
-    </table>
+            </li>
+            <li style="height:50px; color:#fff">
+              <div style="display: inline-block; float: left;width: 140px;">
+                    <a href="#" style="color:#fff !important"> <img src="images/Tank.png" alt="" style="width:16px;height:auto;" /> Tank</a>
+                </div>
+                <div id="legend-rating">
+                  <span style="display:inline-block;float:left">Low</span>
+                  <ul style="margin-top: 8px !important;
+    margin-left: 8px !important;">
+                    <li class="greenc"></li>
+                    <li class="orangec"></li>
+                    <li class="brightredc"></li>
+                    <li class="darkredc"></li>
+                  </ul>
+                    <span style="display:inline-block;float:left">High</span>
+                </div>
+            </li>
+            <li style="height:50px;">
+                <div style="display: inline-block; float: left;width: 140px;">
+                    <a href="#" style="color:#fff !important"> <img src="images/Hospital.png" alt="" style="width:16px;height:auto;" /> Hospital</a>
+                </div>
+                <div id="legend-rating">
+                  <span style="color:#fff;display:inline-block;float:left">High</span>
+                  <ul style="margin-top: 8px !important;
+    margin-left: 8px !important; ">
+                    <li class="greenc"></li>
+                    <li class="orangec"></li>
+                    <li class="brightredc"></li>
+                    <li class="darkredc"></li>
+                  </ul>
+                    <span style="color:#fff;display:inline-block;float:left">Low</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
 
 </px-card>
-<px-card header-text="Temperature Chart">
-<px-chart>
-  <px-chart-series-line id="hpt-acc-position-cruise" data="{{data}}">
-  </px-chart-series-line>
-</px-chart>
-        
-</px-card>
-<px-card header-text="Humidity Chart">
-<px-chart>
-  <px-chart-series-line id="hpt-acc-position-cruise" data="{{data}}">
-  </px-chart-series-line>
-</px-chart>
-        
-</px-card>
-
-</div>
