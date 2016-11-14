@@ -1,8 +1,11 @@
 define(['angular', './sample-module'], function (angular, controllers) {
     'use strict';
 
+
+
+
     // Controller definition
-     controllers.controller('DashboardCtrl', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$filter', 'TruckService', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$filter,TruckService) {
+     controllers.controller('DashboardCtrl', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$filter', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$filter) {
 
 
 
@@ -20,7 +23,7 @@ define(['angular', './sample-module'], function (angular, controllers) {
 
 
     // Controller definition
-     controllers.controller('BlankpageCtrl', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$filter', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$filter) {
+     controllers.controller('BlankpageCtrl', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$filter','TruckService', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$filter,TruckService) {
 
 
 
@@ -55,19 +58,21 @@ function onloadMarkers(dataMain){
         var mapOptions = {
            zoom: 17,
            center: new google.maps.LatLng(37.7473988,-121.9464932),
-           mapTypeId: google.maps.MapTypeId.SATELLITE           
-       }
+           mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
 
-// map initialiazation
-       var map = new google.maps.Map(document.getElementById('predixMap'), mapOptions);
+  // map initialiazation
+         var map = new google.maps.Map(document.getElementById('predixMap'), mapOptions);
+         $scope.myMAP= map;
 
 //chandresh
       try{ 
 
         google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
-          map.setCenter(new google.maps.LatLng(37.7473988,-121.9464932));
-          map.setZoom(17); //Or whatever
-      });
+          $scope.myMAP.setCenter(new google.maps.LatLng(37.7473988,-121.9464932));
+          $scope.myMAP.setZoom(17); //Or whatever
+         });
+
        console.log("this is where magic begins");
         $scope.path2 = [{lat:  37.748209, lng: -121.950600},
              {lat: 37.747086, lng:-121.950109},
@@ -103,12 +108,7 @@ function onloadMarkers(dataMain){
       }
 //chandresh
 
-       var bounds = new google.maps.LatLngBounds();
-       var marker;
-        }
 
-  // map initialiazation
-         var map = new google.maps.Map(document.getElementById('predixMap'), mapOptions);
          var bounds = new google.maps.LatLngBounds();
          var marker;
          var infoWindow = new google.maps.InfoWindow();
@@ -253,6 +253,8 @@ $scope.updateMapData = function(){
 
 
 }//main  scope update function end
+
+
 
 
 
