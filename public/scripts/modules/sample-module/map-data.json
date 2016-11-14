@@ -6,7 +6,7 @@
         "Status": "GREEN",
         "params": {
             "position": 5,
-            "airquality": "30%"
+            "airquality": "50%"
         }
     },{
         "Lat": 37.748471,
@@ -16,7 +16,7 @@
         "Status": "RED",
         "params": {
             "position": 5,
-            "airquality": "30%"
+            "airquality": "40%"
         }
     },{
         "Lat":  37.745516,
@@ -26,7 +26,7 @@
         "Status": "ORANGE",
         "params": {
             "position": 5,
-            "airquality": "30%"
+            "airquality": "50%"
         }
     },
 
