@@ -6,7 +6,7 @@
 #  Step 2 - After you have your application running you can bind to the services below as described on predix.io
 
 applications:
-  - name: TCSSmartcityBins
+  - name: TCSSmartcityTank
     buildpack: java_buildpack
     #path: dist
     memory: 640M
