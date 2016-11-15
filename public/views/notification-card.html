@@ -1,0 +1,25 @@
+<dom-module id="notification-card">
+    <template>
+        <px-card icon='demo-icon' header-text='Demo Card' chevron>
+            <h1>Hello World</h1>
+            <p>{{context.name}}</p>
+            <p>This is the bare minimum you need for a Predix Experience card.</p>
+        </px-card>
+    </template>
+</dom-module>
+<script>
+    Polymer({
+        is: 'notification-card',
+        init: function(){
+            // this is where you can do some initialization of your card
+        },
+        contextChanged: function(newContext, oldContext){
+            // this is where you will receive updates to the context
+        },
+        deckStateChanged: function(newDeckState, oldDeckState){
+            // this is where you will receive updates from other cards
+        },
+        behaviors: [px.card]
+    });
+
+</script>
