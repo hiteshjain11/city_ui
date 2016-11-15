@@ -2,8 +2,10 @@ package tcs.smartcity.controller;
 
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tcs.smartcity.entity.Tank;
@@ -22,6 +24,56 @@ public class TankController {
     List<Tank> getAllAssetts() {
 		System.out.println(((List<Tank>) tankRepository.findAll()).size());
         return (List<Tank>) tankRepository.findAll();
+    }
+	
+	@RequestMapping("/allTankWithCountOfFillage")
+	public @ResponseBody String getAllAssettsWithCountOfFillage() {
+		System.out.println(((List<Tank>) tankRepository.findAll()).size());
+		List<Tank> allTanks = (List<Tank>) tankRepository.findAll();
+		int chlorineLow=0,chlorineMedium=0,chlorineHigh=0,leadLow=0,leadMedium=0,leadHigh=0,pHLow=0,pHMedium=0,pHHigh=0,turbidityLow=0,turbidityMedium=0,turbidityHigh=0;
+		for(Tank oneTank:allTanks)
+		{
+			if(oneTank.getChlorine()<25)
+				chlorineLow++;
+			if(oneTank.getChlorine()>25&&oneTank.getChlorine()<75)
+				chlorineMedium++;
+			if(oneTank.getChlorine()>75)
+				chlorineHigh++;
+			if(oneTank.getLead()<25)
+				leadLow++;
+			if(oneTank.getLead()>25&&oneTank.getLead()<75)
+				leadMedium++;
+			if(oneTank.getLead()>75)
+				leadHigh++;
+			
+			if(oneTank.getPh()<25)
+				pHLow++;
+			if(oneTank.getPh()>25&&oneTank.getPh()<75)
+				pHMedium++;
+			if(oneTank.getPh()>75)
+				pHHigh++;
+			if(oneTank.getTurbidity()<25)
+				turbidityLow++;
+			if(oneTank.getTurbidity()>25&&oneTank.getTurbidity()<75)
+				turbidityMedium++;
+			if(oneTank.getTurbidity()>75)
+				turbidityHigh++;
+		}
+		JSONObject jsonLevels = new JSONObject();
+		jsonLevels.put("chlorineLow", chlorineLow);
+		jsonLevels.put("chlorineMedium", chlorineMedium);
+		jsonLevels.put("chlorineHigh", chlorineHigh);
+		jsonLevels.put("leadLow", leadLow);
+		jsonLevels.put("leadMedium", leadMedium);
+		jsonLevels.put("leadHigh", leadHigh);
+		jsonLevels.put("pHLow", pHLow);
+		jsonLevels.put("pHMedium", pHMedium);
+		jsonLevels.put("pHHigh", pHHigh);
+		jsonLevels.put("turbidityLow", turbidityLow);
+		jsonLevels.put("turbidityMedium", turbidityMedium);
+		jsonLevels.put("turbidityHigh", turbidityHigh);
+		
+        return jsonLevels.toString();
     }
 	
 	@RequestMapping("/tank25Ph")
