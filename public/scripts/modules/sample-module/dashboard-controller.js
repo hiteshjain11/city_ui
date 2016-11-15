@@ -66,46 +66,46 @@ function onloadMarkers(dataMain){
          $scope.myMAP= map;
 
 //chandresh
-      try{ 
+      // try{ 
 
-        google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
-          $scope.myMAP.setCenter(new google.maps.LatLng(37.7473988,-121.9464932));
-          $scope.myMAP.setZoom(17); //Or whatever
-         });
+      //   google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
+      //     $scope.myMAP.setCenter(new google.maps.LatLng(37.7473988,-121.9464932));
+      //     $scope.myMAP.setZoom(17); //Or whatever
+      //    });
 
-       console.log("this is where magic begins");
-        $scope.path2 = [{lat:  37.748209, lng: -121.950600},
-             {lat: 37.747086, lng:-121.950109},
-             {lat: 37.747758, lng: -121.947851},
-             {lat: 37.748948, lng: -121.948534}];
+      //  console.log("this is where magic begins");
+      //   $scope.path2 = [{lat:  37.748209, lng: -121.950600},
+      //        {lat: 37.747086, lng:-121.950109},
+      //        {lat: 37.747758, lng: -121.947851},
+      //        {lat: 37.748948, lng: -121.948534}];
 
-        $scope.path1 = [{lat: 37.746767, lng:-121.954336},
-                        {lat: 37.748364, lng:-121.955827},
-                        {lat: 37.750672, lng:-121.953560},
-                        {lat: 37.752725, lng:-121.950242},
-                        {lat: 37.749047, lng:-121.948593}
-                        ];
+      //   $scope.path1 = [{lat: 37.746767, lng:-121.954336},
+      //                   {lat: 37.748364, lng:-121.955827},
+      //                   {lat: 37.750672, lng:-121.953560},
+      //                   {lat: 37.752725, lng:-121.950242},
+      //                   {lat: 37.749047, lng:-121.948593}
+      //                   ];
 
-       var length1 = $scope.path1.length;
-       TruckService.initialize(map);
-       $scope.counter =0 ;
+      //  var length1 = $scope.path1.length;
+      //  TruckService.initialize(map);
+      //  $scope.counter =0 ;
        
-       console.log(new Date());
+      //  console.log(new Date());
        
-       $interval(function() {
+      //  $interval(function() {
 
-            TruckService.calcRoute($scope.path1[$scope.counter%length1],
-              $scope.path1[($scope.counter +1)%length1]);
+      //       TruckService.calcRoute($scope.path1[$scope.counter%length1],
+      //         $scope.path1[($scope.counter +1)%length1]);
 
-            $scope.counter++;
-       }, 5000);
+      //       $scope.counter++;
+      //  }, 5000);
 
 
 
-       console.log(new Date());
-      }catch(e){
-        console.error(e);
-      }
+      //  console.log(new Date());
+      // }catch(e){
+      //   console.error(e);
+      // }
 //chandresh
 
 

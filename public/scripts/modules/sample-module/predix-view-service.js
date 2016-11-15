@@ -17,6 +17,72 @@ define(['angular', './sample-module'], function (angular, module) {
                         deferred.reject('Error fetching decks with tags ' + tags);
                     });
                 return deferred.promise;
+            },
+            getTrucksData: function () {
+                var deferred = $q.defer();
+                $http.get('https://tcssmartcitytransport.run.aws-usw02-pr.ice.predix.io/allTransport')
+                    .then(function (res) {
+                        deferred.resolve(res);
+                    },
+                    function () {
+                        deferred.reject('Error fetching decks with tags ');
+                    });
+                return deferred.promise;
+            },
+            getHosiptalData: function () {
+                var deferred = $q.defer();
+                $http.get('https://tcssmartcityhospital.run.aws-usw02-pr.ice.predix.io/allHospitals')
+                    .then(function (res) {
+                        deferred.resolve(res);
+                    },
+                    function () {
+                        deferred.reject('Error fetching decks with tags ');
+                    });
+                return deferred.promise;
+            },
+            getBins: function () {
+                var deferred = $q.defer();
+                $http.get('https://tcssmartcitybins.run.aws-usw02-pr.ice.predix.io/allBinsWithCountOfFillage')
+                    .then(function (res) {
+                        deferred.resolve(res);
+                    },
+                    function () {
+                        deferred.reject('Error fetching decks with tags ');
+                    });
+                return deferred.promise;
+            },
+            getTanks: function () {
+                var deferred = $q.defer();
+                $http.get('https://tcssmartcitytank.run.aws-usw02-pr.ice.predix.io/allTankWithCountOfFillage')
+                    .then(function (res) {
+                        deferred.resolve(res);
+                    },
+                    function () {
+                        deferred.reject('Error fetching decks with tags ');
+                    });
+                return deferred.promise;
+            },
+            getHealthMeterData: function () {
+                var deferred = $q.defer();
+                $http.get('https://tcssmartcitynotification.run.aws-usw02-pr.ice.predix.io/healthMeterNotification')
+                    .then(function (res) {
+                        deferred.resolve(res);
+                    },
+                    function () {
+                        deferred.reject('Error fetching decks with tags ');
+                    });
+                return deferred.promise;
+            },
+            getNotification: function () {
+                var deferred = $q.defer();
+                $http.get('https://tcssmartcitynotification.run.aws-usw02-pr.ice.predix.io/unattendedNotificationBasedonType')
+                    .then(function (res) {
+                        deferred.resolve(res);
+                    },
+                    function () {
+                        deferred.reject('Error fetching decks with tags ');
+                    });
+                return deferred.promise;
             }
         };
     }]);

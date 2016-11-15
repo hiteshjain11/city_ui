@@ -5,7 +5,159 @@
 	margin: 0;
 	padding:0;
 }*/
+/*Dashboard -Vaibhav*/
+      .dashsboard-header{
+          background-color: #525155;
+          height:70px;
+          padding:0px 10px;
+          
+      }
+.border-header-dashboard{
+        border: solid 2px #969696;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    height: 60px;
+    vertical-align: top;
+    text-align: center;
+    /* line-height: 70px; */
+    min-width: 70px;
+    margin-left: 10px;
+}
+.bin-container,.hospital-container{
+    float: left;
+    width: 48%;
+    border: solid 2px #CCCCD0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 2%;
+}
+.reserviour-container,.truck-container{
+    float: left;
+    width: 48%;
+    border: solid 2px #CCCCD0;
+    border-radius: 5px;
+    padding: 10px;
+   
+}
+.hospital-header{
+    font-weight: bold;
+    margin:13px 0px;
+    font-size:18px
+}
+.truck-main{
+    border: solid 1px #BABAC3;
+    border-radius: 7px;
+    height: 19px;
+    width: 200px;
+    padding: 1px 7px;
+}
+.truck-sub{
+    background-color: #5FBC68;
+    height: 15px;
+    border-radius: 5px;
+    width: 37%;
+}
+.redsignal{
+    display: inline-block;
+    height: 20px;
+    width: 21px;
+    font-size: 12px;
+    border-radius: 16px;
+    background-color: #D0011B;
+    text-align: center;
+    line-height: 16px;
+    position: absolute;
+    margin-left: -18px;
+    color: #fff;
+    font-weight: bold;
+    border: solid 2px #fff;
+}
+.greensignal{
+    display: inline-block;
+    height: 20px;
+    width: 21px;
+    font-size: 12px;
+    border-radius: 16px;
+    background-color: #5FBC68;
+    text-align: center;
+    line-height: 16px;
+    position: absolute;
+    margin-left: -18px;
+    color: #fff;
+    font-weight: bold;
+    border: solid 2px #fff;
+}
+.redborder{
+    border:solid 3px #F05753 !important;
+}
 
+.health-meter{
+    background-color: #FF9720;
+    height: 15px;
+    border-radius: 7px;
+}
+.select-dashboard {
+    width: 100%;
+    background-color: #EEEEF4;
+    padding-left: 10px;
+    border: solid 1px #BABAC3;
+    height: 26px;
+    color: #B0B0BB;
+    font-size: 16px;
+}
+.dashboard-maindata{
+    background-color: #FFF7B4;
+    border: solid 1px #D1D0D7;
+    margin: 10px 0px;
+    padding: 3px 10px;
+    border-radius: 5px;    
+}
+.border-image{
+    max-height: 60px;
+    width: 70px
+}
+.image-bottom{
+    font-weight:bold;
+    text-align: center;
+}
+.dashboard-button{float: right;
+    height: 30px;
+    background-color: #E9ECF0;
+    padding: 5px;
+    border: solid 1px #D1D0D7;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.border-dashboard{
+    border: solid 2px #969696;
+    border-radius: 5px;
+    padding: 4px;
+    display: inline-block;
+    height: 90px;
+    vertical-align: top;
+    text-align: center;
+    /* line-height: 70px; */
+    /* min-width: 70px; */
+    margin-right: 12px;
+}
+.border-dashboard-hospital{
+    float: left;
+    width: 46%;
+    margin-right: 2%;
+    border: solid 2px #969696;
+    border-radius: 5px;
+    height:90px
+}
+.border-dashboard-hospital img{
+    width:100px;
+}
+.truck-header{color: #9999A0;margin-top: 5px;}
+.truckheader-span{
+    font-weight:bold;
+    font-size:18px;
+    color:#5FBC68;
+}
 
 /* Card */
 .card {

@@ -35,6 +35,11 @@ define(['angular', 'angular-ui-router'], function(angular) {
                 templateUrl: 'views/dashboards.html',
                 controller: 'DashboardCtrl'
             })
+            .state('dashboard', {
+                url: '/dashboard',
+                templateUrl: 'views/dashboard.html',
+                controller: 'DashboardController'
+            })
             .state('blankpage', {
                 url: '/blankpage',
                 templateUrl: 'views/blank-page.html',
