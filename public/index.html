@@ -56,7 +56,8 @@
     <link rel="import" href="bower_components/px-sample-cards/fetch-data-card.html"/>
     <link rel="import" href="bower_components/px-sample-cards/temperature-card.html"/>
     <link rel="import" href="bower_components/px-alert-message-master/px-alert-message.html"/>
-
+    <link rel="import" href="/bower_components/px-modal/px-modal.html"/>
+    <link rel="import" href="/bower_components/px-datetime-picker/px-datetime-picker.html"/>
     <link rel="import" href="bower_components/px-slider-master/px-slider.html"/>
     <link rel="stylesheet" href="stylesheets/dashboard.css"/>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.2" type='text/javascript'></script>
@@ -323,6 +324,58 @@ transition: opacity 400ms ease-in;
 #navitemlist ul li a {
   font-size:14px !important;
 }
+hr { width:100%; height:1px; background: #fff }
+
+#to_date{
+  position: relative;
+  top :-31px;
+  right: -323px;
+}
+#from_date{
+  position: relative;
+  top :-31px;
+  right: -300px;
+}
+.getinline{
+  float: left;
+}
+.wrapper{
+  overflow:auto;
+}
+.datewise_alert{
+  margin-bottom: 20px;
+  background-color: grey;
+  max-width: 125px;
+}
+.alert_desc{
+  padding-bottom: 5px;
+  margin-right: 45px;
+  max-width: 75%;
+  min-width: 75%;
+}
+.alert_user{
+  padding-bottom: 5px;
+  margin-right: 30px;
+}
+.status{
+  padding-bottom: 5px;
+  right : 100%;
+  color : white;
+  max-height: 20px;
+  min-width: 60px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 20px; 
+}
+.urgent{
+  background-color: red ;
+}
+.inprogress{
+  background-color: orange ;
+}
+.closed_alert{
+  background-color: green ;
+}
 
      </style>
 
@@ -339,7 +392,42 @@ transition: opacity 400ms ease-in;
             </h1>
 
         </div>
+        <ul style="    margin-left: auto;" class="nav navbar-nav navbar-right">
+          <li>
 
+            <px-modal btn-modal-positive="Next" btn-modal-negative="Close" modal-heading="Smart City Notifications">
+            <a href='javascript:void(0)'' class='modal-trigger'><i class="fa fa-bell" aria-hidden="true" fa-3x></i> </a>
+            <hr/>
+            <px-datetime-picker id="from_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+            <px-datetime-picker id="to_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+
+            <div class="wrapper">
+              
+              <header class="datewise_alert ">Friday 01/01/2013 </header>
+              <div>
+                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  </div>                
+                <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="status urgent getinline">Open</div>
+              </div>
+              <div>
+                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>                
+                <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="status closed_alert getinline">Close</div>
+              </div>
+              <div>
+                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>                
+                <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="status inprogress getinline">OnGoing</div>
+              </div>
+            </div>
+
+            <!-- <p><b>Please sign-in to access this part of the application.</b></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.</p> -->
+
+            </px-modal>
+
+           <!--  <a href="function(){document.querySelector('notification-card').showCard();}"> <i class="fa fa-bell" aria-hidden="true" fa-3x></i> </a> -->
+          </li>
+        </ul>
         <ul style="    margin-left: auto;" class="nav navbar-nav navbar-right">
           <li>
             <a href="#" style="background: none !important;"><img style="width:45px;height:auto; border-radius:22px;" class="navbar-avatar" src="images/pic-profile.png" alt="Profile"> </a>
