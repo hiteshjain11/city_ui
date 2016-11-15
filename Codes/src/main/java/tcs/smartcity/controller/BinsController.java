@@ -2,8 +2,14 @@ package tcs.smartcity.controller;
 
 import java.util.List;
 
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tcs.smartcity.entity.Bins;
@@ -22,6 +28,37 @@ public class BinsController {
     List<Bins> getAllAssetts() {
 		System.out.println(((List<Bins>) binsRepository.findAll()).size());
         return (List<Bins>) binsRepository.findAll();
+    }
+	
+	@RequestMapping("/allBinsWithCountOfFillage")
+	public @ResponseBody String getAllAssettsWithCountOfFillage() {
+		System.out.println(((List<Bins>) binsRepository.findAll()).size());
+		List<Bins> allBins = (List<Bins>) binsRepository.findAll();
+		int fillageLow=0,fillageMedium=0,fillageHigh=0,gasLow=0,gasMedium=0,gasHigh=0;
+		for(Bins oneBin:allBins)
+		{
+			if(oneBin.getFillagelevel()<25)
+				fillageLow++;
+			if(oneBin.getFillagelevel()>25&&oneBin.getFillagelevel()<75)
+				fillageMedium++;
+			if(oneBin.getFillagelevel()>75)
+				fillageHigh++;
+			if(oneBin.getGaslevel()<10)
+				gasLow++;
+			if(oneBin.getGaslevel()>10&&oneBin.getGaslevel()<25)
+				gasMedium++;
+			if(oneBin.getGaslevel()>25)
+				gasHigh++;
+		}
+		JSONObject jsonLevels = new JSONObject();
+		jsonLevels.put("fillageLow", fillageLow);
+		jsonLevels.put("fillageMedium", fillageMedium);
+		jsonLevels.put("fillageHigh", fillageHigh);
+		jsonLevels.put("gasLow", gasLow);
+		jsonLevels.put("gasMedium", gasMedium);
+		jsonLevels.put("gasHigh", gasHigh);
+		
+        return jsonLevels.toString();
     }
 	
 	@RequestMapping("/bins25Fillage")

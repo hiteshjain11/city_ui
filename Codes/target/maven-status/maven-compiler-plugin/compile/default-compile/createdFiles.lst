@@ -1,2 +1,6 @@
+tcs\smartcity\repository\BinsRepository.class
+tcs\smartcity\entity\Bins.class
+tcs\smartcity\controller\BinsController.class
+tcs\smartcity\controller\SimpleCORSFilter.class
 tcs\smartcity\PredixSpringBootAppApplication.class
 tcs\smartcity\jpasupport\HstoreUserType.class
