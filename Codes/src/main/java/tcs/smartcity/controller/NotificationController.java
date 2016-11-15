@@ -39,13 +39,13 @@ public class NotificationController {
 		int bins=0,tank=0,transport=0,hospital=0;
 		for(Notification oneNotification:allNotifications)
 		{
-			if(oneNotification.getNotificationtype().equalsIgnoreCase("bins"))
+			if(oneNotification.getNotificationtype().trim().equalsIgnoreCase("bins"))
 				bins++;
-			if(oneNotification.getNotificationtype().equalsIgnoreCase("tank"))
+			if(oneNotification.getNotificationtype().trim().equalsIgnoreCase("tank"))
 				tank++;
-			if(oneNotification.getNotificationtype().equalsIgnoreCase("transport"))
+			if(oneNotification.getNotificationtype().trim().equalsIgnoreCase("transport"))
 				transport++;
-			if(oneNotification.getNotificationtype().equalsIgnoreCase("hospital"))
+			if(oneNotification.getNotificationtype().trim().equalsIgnoreCase("hospital"))
 				hospital++;
 		}
 		JSONObject jsonLevels = new JSONObject();
