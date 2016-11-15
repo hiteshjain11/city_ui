@@ -28,6 +28,9 @@ public class Hospital {
     private int totalseat;
     private int occupiedseat;
     private int unoccupiedseat;
+    private int medicine1;
+    private int medicine2;
+    private int medicine3;
     
 	public int getHospitalid() {
 		return hospitalid;
@@ -58,6 +61,24 @@ public class Hospital {
 	}
 	public void setUnoccupiedseat(int unoccupiedseat) {
 		this.unoccupiedseat = unoccupiedseat;
+	}
+	public int getMedicine1() {
+		return medicine1;
+	}
+	public void setMedicine1(int medicine1) {
+		this.medicine1 = medicine1;
+	}
+	public int getMedicine2() {
+		return medicine2;
+	}
+	public void setMedicine2(int medicine2) {
+		this.medicine2 = medicine2;
+	}
+	public int getMedicine3() {
+		return medicine3;
+	}
+	public void setMedicine3(int medicine3) {
+		this.medicine3 = medicine3;
 	}
     
 	
