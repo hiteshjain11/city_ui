@@ -83,6 +83,17 @@ define(['angular', './sample-module'], function (angular, module) {
                         deferred.reject('Error fetching decks with tags ');
                     });
                 return deferred.promise;
+            },
+            getAllNotification: function () {
+                var deferred = $q.defer();
+                $http.get('https://tcssmartcitynotification.run.aws-usw02-pr.ice.predix.io/allNotification')
+                    .then(function (res) {
+                        deferred.resolve(res);
+                    },
+                    function () {
+                        deferred.reject('Error fetching decks with tags ');
+                    });
+                return deferred.promise;
             }
         };
     }]);

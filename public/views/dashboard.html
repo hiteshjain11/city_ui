@@ -17,22 +17,111 @@
     </div>
         <div style="float:right;margin-top:5px;margin-right:20px">
             <div class="bin-header border-header-dashboard">
-                <img src="../images/garbage-summarybar.png">
+                
+            <px-modal  btn-modal-negative="Close" modal-heading="Smart City Notifications : Garbage">
+                <a href='javascript:void(0)'' class='modal-trigger'>
+                    <!-- <i class="fa fa-bell" aria-hidden="true" fa-3x></i>  -->
+                    <img src="../images/garbage-summarybar.png">
+                </a>
+                
+                <hr/>
+                <px-datetime-picker id="from_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+                <px-datetime-picker id="to_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+
+                <div class="wrapper">
+
+                  <header class="datewise_alert ">Friday 01/01/2013 </header>
+                  <div ng-repeat="$scope.binsAlerts in alerts">
+                    <div class="alert_desc getinline"> {{alerts.notificationtext}}</div>
+                    <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    <div class="status  getinline" ng-class="alerts.notificationstatus"> {{alerts.notificationstatus}}</div>
+                  </div>
+                  
+                </div>
+                </px-modal>
+
             </div>
             <div class="redsignal" ng-show="binred">{{binredvalue}}</div>
             <div class="greensignal" ng-show="bingreen"><i class="fa fa-check"></i></div>
             <div class="border-header-dashboard">
-                <img src="../images/reservoir-summarybar.png">
+                
+                <px-modal  btn-modal-negative="Close" modal-heading="Smart City Notifications : Reservoirs">
+                <a href='javascript:void(0)'' class='modal-trigger'>
+                    <!-- <i class="fa fa-bell" aria-hidden="true" fa-3x></i>  -->
+                    <img src="../images/reservoir-summarybar.png">
+                </a>
+                
+                <hr/>
+                <px-datetime-picker id="from_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+                <px-datetime-picker id="to_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+
+                <div class="wrapper">
+
+                  <header class="datewise_alert ">Friday 01/01/2013 </header>
+                  <div ng-repeat="$scope.waterAlerts in alerts">
+                    <div class="alert_desc getinline"> {{alerts.notificationtext}}</div>
+                    <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    <div class="status  getinline" ng-class="alerts.notificationstatus"> {{alerts.notificationstatus}}</div>
+                  </div>
+                  
+                </div>
+                </px-modal>
+
             </div>
             <div class="redsignal" ng-show="tankred">{{tankredvalue}}</div>
             <div class="greensignal" ng-show="tankgreen"><i class="fa fa-check"></i></div>
             <div class="border-header-dashboard">
-                <img src="../images/hospital-summarybar.png">
+                
+                    <px-modal  btn-modal-negative="Close" modal-heading="Smart City Notifications : Hospitals">
+                <a href='javascript:void(0)'' class='modal-trigger'>
+                    <!-- <i class="fa fa-bell" aria-hidden="true" fa-3x></i>  -->
+                    <img src="../images/hospital-summarybar.png">
+                </a>
+                
+                <hr/>
+                <px-datetime-picker id="from_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+                <px-datetime-picker id="to_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+
+                <div class="wrapper">
+
+                  <header class="datewise_alert ">Friday 01/01/2013 </header>
+                  <div ng-repeat="hospitalAlerts in alerts">
+                    <div class="alert_desc getinline"> {{alerts.notificationtext}}</div>
+                    <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    <div class="status  getinline" ng-class="alerts.notificationstatus"> {{alerts.notificationstatus}}</div>
+                  </div>
+                  
+                </div>
+                </px-modal>
+
+
             </div>
             <div class="redsignal" ng-show="hospitalred">{{hospitalredvalue}}</div>
             <div class="greensignal" ng-show="hospitalgreen"><i class="fa fa-check"></i></div>
             <div class="border-header-dashboard">
+                
+
+            <px-modal  btn-modal-negative="Close" modal-heading="Smart City Notifications : Transport">
+            <a href='javascript:void(0)'' class='modal-trigger'>
+                <!-- <i class="fa fa-bell" aria-hidden="true" fa-3x></i>  -->
                 <img src="../images/truck-summarybar.png">
+            </a>
+            
+            <hr/>
+            <px-datetime-picker id="from_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+            <px-datetime-picker id="to_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
+
+            <div class="wrapper">
+
+              <header class="datewise_alert ">Friday 01/01/2013 </header>
+              <div ng-repeat="$scope.transportAlerts in alerts">
+                <div class="alert_desc getinline"> {{alerts.notificationtext}}</div>
+                <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="status  getinline" ng-class="alerts.notificationstatus"> {{alerts.notificationstatus}}</div>
+              </div>
+              
+            </div>
+            </px-modal>
             </div>
             <div class="redsignal" ng-show="truckred">{{truckredvalue}}</div>
             <div class="greensignal" ng-show="truckgreen"><i class="fa fa-check"></i></div>

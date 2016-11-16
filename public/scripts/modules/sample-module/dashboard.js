@@ -36,6 +36,12 @@ define(['angular', './sample-module'], function (angular, controllers) {
          $scope.truckgreen=false;
          $scope.truckred=false;
 
+         $scope.hospitalAlerts=[];
+         $scope.binsAlerts=[];
+         $scope.transportAlerts=[];
+         $scope.waterAlerts=[];
+
+
         //  filter navigation
         $scope.navigateFilterGarbage = function(typefilter) {
           MapFilterService.filtertype = typefilter;
@@ -205,5 +211,32 @@ define(['angular', './sample-module'], function (angular, controllers) {
     // Start the timer
 
          $scope.init();
+
+        //this is for notifications
+        
+       
+        PredixViewService.getAllNotification().then(function(res){
+            res.data.forEach(function(elem){
+                switch (elem.notificationtype.toLowerCase()) {
+                    case "hospital":
+                        $scope.hospitalAlerts.push(elem);
+                        break;
+                    case "bins":
+                        $scope.binsAlerts.push(elem);
+                        break;
+                    case "transport":
+                        $scope.transportAlerts.push(elem);
+                        break;
+                    default:
+                        $scope.waterAlerts.push(elem);
+                        break;
+                }
+            });
+            console.log(res.data);
+        });
+
+        
+      
+
           }]);
     });
