@@ -48,6 +48,9 @@ require.config({
         // angular ui router
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router.min',
 
+
+
+
         // Require JS Plugins
         text: '../bower_components/requirejs-plugins/lib/text',
         order: '../bower_components/requirejs-plugins/src/order',

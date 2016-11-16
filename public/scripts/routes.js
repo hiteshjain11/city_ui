@@ -31,19 +31,19 @@ define(['angular', 'angular-ui-router'], function(angular) {
             })
             .state('dashboards', {
                 parent: 'secure',
-                url: '/dashboards',
-                templateUrl: 'views/dashboards.html',
-                controller: 'DashboardCtrl'
+                url: '/dashboard',
+                templateUrl: 'views/dashboard.html',
+                controller: 'DashboardController'
             })
             .state('dashboard', {
                 url: '/dashboard',
                 templateUrl: 'views/dashboard.html',
                 controller: 'DashboardController'
             })
-            .state('blankpage', {
-                url: '/blankpage',
-                templateUrl: 'views/blank-page.html',
-                controller: 'BlankpageCtrl'
+            .state('regionalpage', {
+                url: '/regionalpage',
+                templateUrl: 'views/regional-page.html',
+                controller: 'RegionalpageCtrl'
             })
             .state('blanksubpage', {
                 url: '/blanksubpage',

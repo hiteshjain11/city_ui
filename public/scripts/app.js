@@ -40,8 +40,8 @@ define([
             session: {},
             tabs: [
                 {icon: 'fa-tachometer', state: 'dashboard', label: 'Dashboard'},
-                {icon: 'fa-file-o', state: 'blankpage', label: 'Regional'},
-                
+                {icon: 'fa-file-o', state: 'regionalpage', label: 'Regional'},
+
             ]
         };
 

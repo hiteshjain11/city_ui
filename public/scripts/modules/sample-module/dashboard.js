@@ -2,8 +2,8 @@ define(['angular', './sample-module'], function (angular, controllers) {
     'use strict';
 
     // Controllers definition
-     controllers.controller('DashboardController', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$timeout', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$timeout) {
-         
+     controllers.controller('DashboardController', ['$scope','$log', 'PredixAssetService', 'PredixViewService','$http','$interval','$compile','$window','dataFactory','$timeout','$state','MapFilterService', function ($scope,$log, PredixAssetService, PredixViewService,$http,$interval,$compile,$window,dataFactory,$timeout,$state,MapFilterService) {
+
          //alert("hi");
          $scope.showSpinner1=false;
          $scope.showSpinner2=false;
@@ -20,7 +20,7 @@ define(['angular', './sample-module'], function (angular, controllers) {
          $scope.binempty="";
          $scope.binmedium="";
          $scope.binfull="";
-         $scope.tankresponse=""; 
+         $scope.tankresponse="";
          $scope.tankempty="";
          $scope.tankmedium="";
          $scope.tankfull="";
@@ -35,33 +35,41 @@ define(['angular', './sample-module'], function (angular, controllers) {
          $scope.hospitalred=false;
          $scope.truckgreen=false;
          $scope.truckred=false;
+
+        //  filter navigation
+        $scope.navigateFilterGarbage = function(typefilter) {
+          MapFilterService.filtertype = typefilter;
+          $state.go('regionalpage');
+        }
+
+
          $scope.getBins = function(){
              $scope.showSpinner1=true;
              PredixViewService.getBins().then(
                     function(data)
-                    {
-                       $scope.showSpinner1=false;                        
-                       $scope.binresponse=data.data; 
+    				{
+                       $scope.showSpinner1=false;
+                       $scope.binresponse=data.data;
                        $scope.binempty=$scope.binresponse.fillageLow;
                        $scope.binmedium=$scope.binresponse.fillageMedium;
                        $scope.binfull=$scope.binresponse.fillageHigh;
                         console.log("$scope.binresponse",$scope.binresponse);
-                    }
-                );
+    				}
+    			);
          }
          $scope.getTanks = function(){
              $scope.showSpinner2=true;
              PredixViewService.getTanks().then(
                     function(data)
-                    {
-                       $scope.showSpinner2=false;                        
-                       $scope.tankresponse=data.data; 
+    				{
+                       $scope.showSpinner2=false;
+                       $scope.tankresponse=data.data;
                        $scope.tankempty=$scope.tankresponse.pHLow;
                        $scope.tankmedium=$scope.tankresponse.pHMedium;
                        $scope.tankfull=$scope.tankresponse.pHHigh;
                         console.log("$scope.binresponse",$scope.binresponse);
-                    }
-                );
+    				}
+    			);
          }
          $scope.changeBin = function(binvalue){
              if(binvalue == "binimage"){
@@ -93,16 +101,16 @@ define(['angular', './sample-module'], function (angular, controllers) {
                 $scope.tankfull=$scope.tankresponse.leadHigh;
             }
          }
-         
+
          $scope.getTruckData = function(){
              $scope.showSpinner4=true;
              PredixViewService.getTrucksData().then(
                     function(data)
-                    {
-                       $scope.showSpinner4=false;                        
-                       $scope.truckresponse=data.data; 
-                    }
-                );
+    				{
+                       $scope.showSpinner4=false;
+                       $scope.truckresponse=data.data;
+    				}
+    			);
          }
          $scope.shownext = function(){
              $scope.hospitalindex++;
@@ -119,33 +127,33 @@ define(['angular', './sample-module'], function (angular, controllers) {
                         {
                             tab.showtop = false;
                         }
-                   );
+        	       );
              }else{
                  _.each($scope.hosiptalresponse,
                     function(tab)
                     {
                         tab.showtop = true;
                     }
-                   );
+        	       );
              }
-             
+
          }
          $scope.getHosiptalData = function(){
              $scope.showSpinner3=true;
              PredixViewService.getHosiptalData().then(
                     function(data)
-                    {
-                       $scope.showSpinner3=false; 
-                        $scope.hosiptalresponse=data.data; 
+    				{
+                       $scope.showSpinner3=false;
+                        $scope.hosiptalresponse=data.data;
                        $scope.hospitalsingle=$scope.hosiptalresponse[0];
                         $scope.hospitalindex=1;
                     }
-                );
+    			);
          }
          $scope.getNotification = function(){
              PredixViewService.getNotification().then(
                     function(data)
-                    {
+    				{
                        console.log("data",data);
                         var res=data.data;
                         if(res.bins>0){
@@ -155,7 +163,7 @@ define(['angular', './sample-module'], function (angular, controllers) {
                             $scope.bingreen=true;
                         }
                         if(res.tank>0){
-                            $scope.tankred=true; 
+                            $scope.tankred=true;
                             $scope.tankredvalue=res.tank;
                         }else{
                             $scope.tankgreen=true;
@@ -167,13 +175,13 @@ define(['angular', './sample-module'], function (angular, controllers) {
                             $scope.hospitalgreen=true;
                         }
                         if(res.transport>0){
-                            $scope.truckred=true; 
-                            $scope.truckredvalue=res.transport; 
+                            $scope.truckred=true;
+                            $scope.truckredvalue=res.transport;
                         }else{
                             $scope.truckgreen=true;
                         }
                     }
-                );
+    			);
          }
          $scope.init=function(){
              $scope.getNotification();
@@ -183,19 +191,19 @@ define(['angular', './sample-module'], function (angular, controllers) {
              $scope.getTruckData();
              PredixViewService.getHealthMeterData().then(
                     function(data)
-                    {
-                       $scope.healthmetervalue=data.data; 
+    				{
+                       $scope.healthmetervalue=data.data;
                     }
             );
         }
-         
+
         var tick = function () {
             $scope.CurrentTime = Date.now() // get the current time
             $timeout(tick, $scope.tickInterval); // reset the timer
         }
         $timeout(tick, $scope.tickInterval);
     // Start the timer
-         
+
          $scope.init();
           }]);
     });

@@ -60,9 +60,15 @@
     <link rel="import" href="/bower_components/px-datetime-picker/px-datetime-picker.html"/> -->
     <link rel="import" href="bower_components/px-slider-master/px-slider.html"/>
     <link rel="stylesheet" href="stylesheets/dashboard.css"/>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.2" type='text/javascript'></script>
-    <script type="text/javascript" src='scripts/gmapapi.js'></script> 
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyC2il93PhAD02sN7pBA08BCBLRYVC0uhmE&amp;libraries=drawing&amp;signed_in=false&amp;libraries=places,drawing" type='text/javascript'></script>
+    <script type="text/javascript" src='scripts/gmapapi.js'></script>
+
+
      <style>
+
+     .dashboard-button{
+       cursor:pointer !important;
+     }
       .navbar
       {
         background-color: #006cb7 !important;
@@ -324,6 +330,11 @@ transition: opacity 400ms ease-in;
 #navitemlist ul li a {
   font-size:14px !important;
 }
+
+#logincontainer{
+  display:none !important;
+}
+
 hr { width:100%; height:1px; background: #fff }
 
 #to_date{
@@ -365,7 +376,7 @@ hr { width:100%; height:1px; background: #fff }
   min-width: 60px;
   text-align: center;
   vertical-align: middle;
-  line-height: 20px; 
+  line-height: 20px;
 }
 .urgent{
   background-color: red ;
@@ -402,20 +413,20 @@ hr { width:100%; height:1px; background: #fff }
             <px-datetime-picker id="to_date" date-time="2016-02-01T01:00:00.000Z" date-format="MM/DD/YY" time-format="hh:mm A" hide-time="true" show-time-zone="abbreviatedText" time-zone="America/Los_Angeles"></px-datetime-picker>
 
             <div class="wrapper">
-              
+
               <header class="datewise_alert ">Friday 01/01/2013 </header>
               <div>
-                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  </div>                
+                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  </div>
                 <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
                 <div class="status urgent getinline">Open</div>
               </div>
               <div>
-                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>                
+                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
                 <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
                 <div class="status closed_alert getinline">Close</div>
               </div>
               <div>
-                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>                
+                <div class="alert_desc getinline"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
                 <div class="alert_user getinline"><i class="fa fa-user" aria-hidden="true"></i></div>
                 <div class="status inprogress getinline">OnGoing</div>
               </div>
@@ -437,13 +448,13 @@ hr { width:100%; height:1px; background: #fff }
           <table>
             <tr>
               <td style="color:#fff;font-size:13px;padding-left: 20px;padding-right: 20px;padding-top:20px;">
-                Welcome
+               <b>Welcome</b>
               </td>
             </tr>
 
             <tr>
               <td style="color:#fff;font-size:10px;padding-left: 20px;padding-right: 20px;">
-                John Doe, CMO
+                <b>John Doe, CMO</b>
               </td>
             </tr>
           </table>
