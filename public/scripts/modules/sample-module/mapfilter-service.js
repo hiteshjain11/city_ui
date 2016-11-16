@@ -10,7 +10,7 @@ define(['angular', './sample-module'], function (angular, module) {
         return {
             fitlertype:'null',
             updateFilterType : function(typefilter) {
-                      self=this;
+                      var self=this;
                       self.eol = self.polyline.Distance();
                       //self.map.setCenter(polyline.getPath().getAt(0));
                       self.marker = new google.maps.Marker({

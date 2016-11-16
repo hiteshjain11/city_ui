@@ -44,7 +44,13 @@
 
     <!-- <link rel="import" href="../polymer/polymer.html"/> -->
     <!-- <link rel="import" href="../px-card/px-card.html"/> -->
-
+<!-- px-Chart -->
+  <link rel="import" href="bower_components/px-theme/px-theme.html"/>
+  <link rel="import" href="bower_components/iron-ajax/iron-ajax.html"/>
+  <link rel="import" href="bower_components/px-chart/px-chart.html"/>
+    <link rel="import" href="bower_components/px-rangepicker/px-rangepicker.html"/>
+    <!-- <link rel="stylesheet" href="bower_components/px-chart/css/px-chart-demo.css"/> -->
+    <link rel="stylesheet" href="bower_components/iron-ajax/iron-ajax.html"/>
 
     <link rel="import" href="bower_components/px-context-browser/px-context-browser.html"/>
     <link rel="import" href="bower_components/px-sample-cards/time-series-card.html"/>
@@ -56,8 +62,8 @@
     <link rel="import" href="bower_components/px-sample-cards/fetch-data-card.html"/>
     <link rel="import" href="bower_components/px-sample-cards/temperature-card.html"/>
     <link rel="import" href="bower_components/px-alert-message-master/px-alert-message.html"/>
-   <!--  <link rel="import" href="/bower_components/px-modal/px-modal.html"/>
-    <link rel="import" href="/bower_components/px-datetime-picker/px-datetime-picker.html"/> -->
+    <link rel="import" href="bower_components/px-modal/px-modal.html"/>
+    <link rel="import" href="bower_components/px-datetime-picker/px-datetime-picker.html"/>
     <link rel="import" href="bower_components/px-slider-master/px-slider.html"/>
     <link rel="stylesheet" href="stylesheets/dashboard.css"/>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyC2il93PhAD02sN7pBA08BCBLRYVC0uhmE&amp;libraries=drawing&amp;signed_in=false&amp;libraries=places,drawing" type='text/javascript'></script>
@@ -388,6 +394,14 @@ hr { width:100%; height:1px; background: #fff }
   background-color: green ;
 }
 
+.viewport:not([style-scope]):not(.style-scope) {
+    width: 100% !important;
+     max-width: 100% !important; 
+     margin-right: 0; 
+     margin-left: 0; 
+}
+
+
      </style>
 
 </head>
@@ -447,13 +461,13 @@ hr { width:100%; height:1px; background: #fff }
         <div class="margin-left: auto;">
           <table>
             <tr>
-              <td style="color:#fff;font-size:13px;padding-left: 20px;padding-right: 20px;padding-top:20px;">
+              <td style="color:#fff;font-size:17px;padding-left: 20px;padding-right: 20px;padding-top:20px;">
                <b>Welcome</b>
               </td>
             </tr>
 
             <tr>
-              <td style="color:#fff;font-size:10px;padding-left: 20px;padding-right: 20px;">
+              <td style="color:#fff;font-size:14px;padding-left: 20px;padding-right: 20px;">
                 <b>John Doe, CMO</b>
               </td>
             </tr>

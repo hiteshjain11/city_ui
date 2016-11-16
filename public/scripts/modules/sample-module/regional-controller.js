@@ -302,7 +302,7 @@ define(['angular', './sample-module'], function(angular, controllers) {
     controllers.factory('dataFactory', ['$http', function($http) {
 
         // var URL_MAP_DATA = 'scripts/modules/sample-module/map-data.json';
-        var URL_MAP_DATA = 'https://tcssmartcityassettimeseries.run.aws-usw02-pr.ice.predix.io/allAssetts';
+       var URL_MAP_DATA = 'https://tcssmartcityassettimeseries.run.aws-usw02-pr.ice.predix.io/allAssetts';
 
 
 

@@ -1,0 +1,102 @@
+  <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+ <!--  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script> -->
+
+  <!-- just some page-level styling for the demo buttons below each chart...all other CSS inside the charts is cohesive with the component -->
+  <!-- <link rel="stylesheet" href="../../bower_components/px-chart/css/px-chart-demo.css"/> -->
+
+  <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+<!--   <link rel="import" href="../../bower_components/px-theme/px-theme.html"/>
+  <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html"/>
+  <link rel="import" href="../../bower_components/px-chart/px-chart.html"/>
+    <link rel="import" href="../../bower_components/px-rangepicker/px-rangepicker.html"/>
+    <link rel="stylesheet" href="../../bower_components/px-chart/css/px-chart-demo.css"/> -->
+
+<section class="full-config-example u-mt+" style="background-color: white;">
+
+  <h1>Garbage Bin Chart</h1>
+
+  <px-chart tooltip-type="condensed" series-events-width="0" zoom-type="xy" >
+    <px-chart-controls  show-date-range="true" display-options='{ "displayType": "normal","submitButtonText": "Update", "submitButtonIcon": "icon-arrow-right" }'></px-chart-controls>
+    <px-chart-yaxis title='{"text": ""}' id="firstAxis" offset="0"></px-chart-yaxis>
+<!--     <px-chart-yaxis title='{"text": "Right Axis"}' id="anotherAxis" opposite="true" offset="-2.5"></px-chart-yaxis> -->
+    <px-chart-series-line id="Garbage Bin 1" axis-id="firstAxis" upper-threshold="30.5" lower-threshold="6.25" units="Hz">
+      <iron-ajax
+        url="bower_components/px-demo-data/demo-data/aviation/delta-egt-cruise.json"
+        handle-as="json"></iron-ajax>
+    </px-chart-series-line>
+    <px-chart-series-line id="Garbage Bin 2" axis-id="firstAxis" units="Hz">
+      <iron-ajax
+        url="bower_components/px-demo-data/demo-data/aviation/fan-vibration-cruise.json"
+        handle-as="json"></iron-ajax>
+    </px-chart-series-line>
+  </px-chart>
+
+  <p class="u-mt+">
+    <button class="btn" onclick="togglePointMarkers()">Toggle Point Markers</button>
+    <button class="btn" onclick="addSeries('Garbage Bin 3', 'bower_components/px-demo-data/demo-data/aviation/core-vibe-rear-cruise.json')">Add Core Vibration Series</button>
+    <button class="btn" onclick="removeSeries('Garbage Bin 3')">Remove Core Vibration Series</button>
+    <button class="btn" onclick="addSeries('Garbage Bin 1', 'bower_components/px-demo-data/demo-data/aviation/fan-vibration-cruise.json')">Add Fan Vibration Series</button>
+    <button class="btn" onclick="removeSeries('Garbage Bin 2')">Remove Fan Vibration Series</button>
+  </p>
+
+</section>
+
+<script>
+// document.addEventListener('WebComponentsReady', function() {
+
+//     //register series refresh listener for full config chart:
+//     Polymer.dom(document).querySelector('.full-config-example px-chart').addEventListener("refresh-series", function(evt) {
+//       if (evt.detail === "fan-vibration-cruise") {
+//         var ironAjaxEl = document.createElement('iron-ajax');
+//         ironAjaxEl.url = 'bower_components/px-demo-data/demo-data/aviation/fan-vibration-cruise2.json';
+//         ironAjaxEl.handleAs = "json";
+//         ironAjaxEl.addEventListener('response', function(evt) {
+//           var tsChart = Polymer.dom(document).querySelector('.full-config-example px-chart');
+//           tsChart.updateSeries('fan-vibration-cruise', evt.detail.response.series, /*noRedraw*/false);
+//         });
+
+//         ironAjaxEl.generateRequest();
+//       }
+//     });
+
+//   });
+
+  function togglePointMarkers(evt){
+    var tsChart = Polymer.dom(document).querySelector('.full-config-example px-chart');
+    tsChart.togglePointMarkers(/*seriesIds*/null);
+  }
+
+
+  function addSeries(seriesId, seriesObjUrl) {
+    var timeSeriesComp = document.querySelector(".full-config-example px-chart");
+    if (timeSeriesComp.chart.get(seriesId)) {
+      console.log("series " + seriesId + " already exists on chart.");
+    }
+    else {
+      var ironAjaxEl = document.createElement("iron-ajax");
+      ironAjaxEl.url = seriesObjUrl;
+      ironAjaxEl.handleAs = "json";
+      ironAjaxEl.addEventListener("response", function(evt) {
+        timeSeriesComp.addSeries({
+            id: seriesId,
+            name: seriesId,
+            data: evt.detail.response.series
+          },
+          /*noRedraw*/false
+        );
+      });
+
+      ironAjaxEl.generateRequest();
+    }
+  }
+
+  function removeSeries (seriesId) {
+    var timeSeriesComp = document.querySelector(".full-config-example px-chart");
+    if (timeSeriesComp.chart.get(seriesId)) {
+      timeSeriesComp.removeSeries(seriesId);
+    }
+    else {
+      console.log("series " + seriesId + " does not exist on chart.");
+    }
+  }
+  </script>

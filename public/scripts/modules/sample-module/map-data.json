@@ -1,98 +1,104 @@
 [{
-        "Lat":  37.747810,
-        "Long": -121.947997,
-        "Assetid": "BIN_001",
-        "Type": "Garbage",
-        "Status": "GREEN",
-        "params": {
-            "position": 5,
-            "airquality": "50%"
-        }
-    },{
-        "Lat": 37.748471,
-        "Long": -121.950283,
-        "Assetid": "BIN_001",
-        "Type": "Garbage",
-        "Status": "RED",
-        "params": {
-            "position": 5,
-            "airquality": "40%"
-        }
-    },{
-        "Lat":  37.745516,
-        "Long": -121.947452,
-        "Assetid": "BIN_001",
-        "Type": "Garbage",
-        "Status": "ORANGE",
-        "params": {
-            "position": 5,
-            "airquality": "50%"
-        }
-    },
-
-    {
-        "Lat": 37.749566,
-        "Long": -121.947493,
-        "Assetid": "BIN_002",
-        "Type": "Tank",
-        "Status": "GREEN",
-        "params": {
-            "position": 5,
-            "airquality": "30%"
-        }
-    }, {
-        "Lat": 37.749947,
-        "Long": -121.941946,
-        "Assetid": "BIN_002",
-        "Type": "Tank",
-        "Status": "RED",
-        "params": {
-            "position": 5,
-            "airquality": "30%"
-        }
-    },
-
-    {
-        "Lat": 37.748353,
-        "Long": -121.942708,
-        "Assetid": "BIN_003",
-        "Type": "Hospital",
-        "Status": "GREEN",
-        "params": {
-            "position": 5,
-            "airquality": "30%"
-        }
-    }, {
-        "Lat": 37.746568,
-        "Long": -121.947835,
-        "Assetid": "BIN_003",
-        "Type": "Hospital",
-        "Status": "RED",
-        "params": {
-            "position": 5,
-            "airquality": "30%"
-        }
-    },{
-        "Lat": 37.746568,
-        "Long": -121.943461,
-        "Assetid": "BIN_003",
-        "Type": "Trucks",
-        "Status": "GREEN",
-        "params": {
-            "position": 5,
-            "airquality": "30%"
-        }
-    },
-
-    {
-        "Lat": 37.750911,
-        "Long": -121.946379,
-        "Assetid": "BIN_004",
-        "Type": "Trucks",
-        "Status": "ORANGE",
-        "params": {
-            "position": 5,
-            "airquality": "50%"
-        }
+    "assetsid": 4,
+    "lat": 37.748471,
+    "longitude": -121.950283,
+    "assetid": "BIN_001",
+    "type": "Garbage",
+    "status": "RED",
+    "params": {
+        "airquality": "30%",
+        "position": "5",
+        "occupied" : "7",
+        "test1" : "test1",
+        "test2" : "test2",
+        "test3" : "test3"
     }
-]
+}, {
+    "assetsid": 5,
+    "lat": 37.745516,
+    "longitude": -121.947452,
+    "assetid": "BIN_001",
+    "type": "Garbage",
+    "status": "ORANGE",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}, {
+    "assetsid": 6,
+    "lat": 37.749566,
+    "longitude": -121.947493,
+    "assetid": "BIN_002",
+    "type": "Tank",
+    "status": "GREEN",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}, {
+    "assetsid": 7,
+    "lat": 37.749947,
+    "longitude": -121.941946,
+    "assetid": "BIN_002",
+    "type": "Tank",
+    "status": "RED",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}, {
+    "assetsid": 8,
+    "lat": 37.748353,
+    "longitude": -121.942708,
+    "assetid": "BIN_003",
+    "type": "Hospital",
+    "status": "GREEN",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}, {
+    "assetsid": 9,
+    "lat": 37.746568,
+    "longitude": -121.947835,
+    "assetid": "BIN_003",
+    "type": "Hospital",
+    "status": "RED",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}, {
+    "assetsid": 10,
+    "lat": 37.746568,
+    "longitude": -121.943461,
+    "assetid": "BIN_003",
+    "type": "Trucks",
+    "status": "GREEN",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}, {
+    "assetsid": 11,
+    "lat": 37.750911,
+    "longitude": -121.946379,
+    "assetid": "BIN_004",
+    "type": "Trucks",
+    "status": "ORANGE",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}, {
+    "assetsid": 12,
+    "lat": 37.74781,
+    "longitude": -121.947997,
+    "assetid": "BIN_001",
+    "type": "Garbage",
+    "status": "GREEN",
+    "params": {
+        "airquality": "30%",
+        "position": "5"
+    }
+}]

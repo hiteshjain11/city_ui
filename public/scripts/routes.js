@@ -48,8 +48,12 @@ define(['angular', 'angular-ui-router'], function(angular) {
             .state('blanksubpage', {
                 url: '/blanksubpage',
                 templateUrl: 'views/blank-sub-page.html'
+            })
+            .state('chart', {
+                url: '/chart',
+                templateUrl: 'views/char.html',
+                controller: 'chart'
             });
-
 
         $urlRouterProvider.otherwise(function ($injector) {
             var $state = $injector.get('$state');
