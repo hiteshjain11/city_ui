@@ -14,7 +14,7 @@ import tcs.smartcity.entity.Notification;
 @Repository
 public interface NotificationRepository extends CrudRepository<Notification,Long> {
 	
-	@Query( "select noti from Notification noti where notificationstatus='Unattended'" )
+	@Query( "select noti from Notification noti where notificationstatus!='Close'" )
 	List<Notification> findUnattendedNotification();
 
 }
