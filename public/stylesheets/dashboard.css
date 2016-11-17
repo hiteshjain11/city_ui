@@ -1,12 +1,12 @@
 @CHARSET "ISO-8859-1";
-/*body	{
-	font-family: "Myriad Pro", Calibri, sans-serif;
-	background-color: #ebebeb;
-	margin: 0;
-	padding:0;
+/*body  {
+  font-family: "Myriad Pro", Calibri, sans-serif;
+  background-color: #ebebeb;
+  margin: 0;
+  padding:0;
 }*/
 /*Dashboard -Vaibhav*/
-      .dashsboard-header{
+     .dashsboard-header{
           background-color: #525155;
           height:70px;
           padding:0px 10px;
@@ -123,13 +123,11 @@
 }
 .dashboard-button{float: right;
     height: 30px;
-    background-color: #E9ECF0;
+    background-color: #57c3e8;
     padding: 5px;
     border: solid 1px #D1D0D7;
     border-radius: 3px;
     margin-top: 10px;
-    background: #006cb7;
-    color: #fff !important;
 }
 .border-dashboard{
     border: solid 2px #969696;
@@ -152,7 +150,11 @@
     height:90px
 }
 .border-dashboard-hospital img{
-    width:100px;
+    width: 90px;
+    margin-right: 10px;
+}
+.border-header-dashboard img{
+    width:46px
 }
 .truck-header{color: #9999A0;margin-top: 5px;}
 .truckheader-span{
@@ -229,21 +231,21 @@
 .card.profile .card-footer {
   padding: 0.5em 0.8em; }
 
-.contentMainContainer	{
-	width : 1159px;
-	height : 334px;
-	margin: 0 auto;
-	margin-bottom: 31px;
+.contentMainContainer {
+  width : 1159px;
+  height : 334px;
+  margin: 0 auto;
+  margin-bottom: 31px;
 }
-.contentContainerClass	{
-	width : 267px;
-	height : 334px;
-	float : left;
-	margin-right: 27px;
-	margin-bottom: 10px;
-}	
-.ImageTextClass	{
-	color: #5d5d5d;
+.contentContainerClass  {
+  width : 267px;
+  height : 334px;
+  float : left;
+  margin-right: 27px;
+  margin-bottom: 10px;
+} 
+.ImageTextClass {
+  color: #5d5d5d;
     font-size: 13px;
     left: 55px;
     position: relative;
@@ -251,123 +253,123 @@
     width: 200px;
 }
 
-.temperatureImage,.humidityImage,.airQualityImage,.timeImage	{
+.temperatureImage,.humidityImage,.airQualityImage,.timeImage  {
     height: 30px;
     left: 16px;
     position: relative;
     top: 5px;
     width: 28px;
 }
-.temperatureImage	{
-	background-image: url("../images/temperature.png");	
+.temperatureImage {
+  background-image: url("../images/temperature.png"); 
 }
-.humidityImage	{
-	background-image: url("../images/humidity.png");
+.humidityImage  {
+  background-image: url("../images/humidity.png");
 }
-.airQualityImage	{
-	background-image: url("../images/air.png");
+.airQualityImage  {
+  background-image: url("../images/air.png");
 }
-.timeImage	{
-	background-image: url("../images/time.png");
-	background-size: 28px 30px;
-}
-
-.timeText	{
-	height: 40px;
+.timeImage  {
+  background-image: url("../images/time.png");
+  background-size: 28px 30px;
 }
 
-
-.truckViewDetailsButtonClass	{
- 	box-shadow: 0 0 6px 1px #888; 
- 	border : 2px solid #c8c8c8;
-	border-radius: 12px;
-	width : 101px;
-	height : 22px;
-	position :relative;
-	top: 15px;
-	left : 16px;
-	background-color: #f4f4f4;
-	color: #5d5d5d;
-	font-size: 13px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.truckTimeDetailsContainerClass	{
-	position : relative;
-	top : 15%;
-	height : 68px;
-	width : 267px;
-}
-.truckETAclass	{
-	/*height : 68px;
-	width : 100px;
-	float : left;
-	border-radius: 0px 34px 34px 0px;
-	background-color: #219256;
-	color:#ffffff;
-	font-size: 20px;*/
-	height : 70px;
-	width : 230px;
-	float : left;
-	border-radius: 34px 34px 34px 34px;
-	background-color: #219256;
-	color:#ffffff;
-	font-size: 16px;
-	margin-left: 18px;
-}
-.truckTimeclass	{
-	margin-left : 34px;
-	height : 64px;
-	width : 195px;
-	border-radius: 34px 34px 34px 34px;
-	border : 2px solid rgba(255, 255, 255, .35);
+.timeText {
+  height: 40px;
 }
 
 
-.truckDetailsClass	{
-	box-shadow: 0 0 9px 1px #888;
-	border-radius: 5px 5px 0px 0px;
-	width : 267px;
-	height : 150px;
+.truckViewDetailsButtonClass  {
+  box-shadow: 0 0 6px 1px #888; 
+  border : 2px solid #c8c8c8;
+  border-radius: 12px;
+  width : 101px;
+  height : 22px;
+  position :relative;
+  top: 15px;
+  left : 16px;
+  background-color: #f4f4f4;
+  color: #5d5d5d;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.truckTemperatureClass,.truckHumidityClass,.truckAirQualityClass	{
-	background-color : #ffffff;
-	height : 45px;
-	width : 267px;
+.truckTimeDetailsContainerClass {
+  position : relative;
+  top : 15%;
+  height : 68px;
+  width : 267px;
+}
+.truckETAclass  {
+  /*height : 68px;
+  width : 100px;
+  float : left;
+  border-radius: 0px 34px 34px 0px;
+  background-color: #219256;
+  color:#ffffff;
+  font-size: 20px;*/
+  height : 70px;
+  width : 230px;
+  float : left;
+  border-radius: 34px 34px 34px 34px;
+  background-color: #219256;
+  color:#ffffff;
+  font-size: 16px;
+  margin-left: 18px;
+}
+.truckTimeclass {
+  margin-left : 34px;
+  height : 64px;
+  width : 195px;
+  border-radius: 34px 34px 34px 34px;
+  border : 2px solid rgba(255, 255, 255, .35);
+}
+
+
+.truckDetailsClass  {
+  box-shadow: 0 0 9px 1px #888;
+  border-radius: 5px 5px 0px 0px;
+  width : 267px;
+  height : 150px;
+}
+.truckTemperatureClass,.truckHumidityClass,.truckAirQualityClass  {
+  background-color : #ffffff;
+  height : 45px;
+  width : 267px;
 
 }
-.truckTemperatureClass,.truckHumidityClass,.truckAirQualityClass	{
-	border-bottom : 1px solid #eeeeee;
-	
+.truckTemperatureClass,.truckHumidityClass,.truckAirQualityClass  {
+  border-bottom : 1px solid #eeeeee;
+  
 }
-.truckViewDetailsButtonContainerClass	{
-	background-color : #f3f3f3;
-	height : 50px;
-	width : 267px;
-	border-radius: 0px 0px 7px 7px;
+.truckViewDetailsButtonContainerClass {
+  background-color : #f3f3f3;
+  height : 50px;
+  width : 267px;
+  border-radius: 0px 0px 7px 7px;
 }
 
 
 button:focus {
-	outline:0;
+  outline:0;
 }
 
-#lastDivOfRow	{
-	margin-right: 0px;
+#lastDivOfRow {
+  margin-right: 0px;
 }
 
-.TruckID	{
-	font-size: 18px;
-	color:#ffffff;
-	left: 6%;
+.TruckID  {
+  font-size: 18px;
+  color:#ffffff;
+  left: 6%;
     position: relative;
     top: 5%;
     width: 250px;
 }
 
-#dropdown	{
-	background-image: url("../images/dropdown.png");
+#dropdown {
+  background-image: url("../images/dropdown.png");
     background-repeat: no-repeat;
     height: 35%;
     left: 96%;
@@ -378,8 +380,8 @@ button:focus {
 
 
 select {
-	-moz-appearance: none;
-	-webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
     background: white url("../images/dropdown.png") no-repeat scroll 100% center;
     border: 0 none !important;
     color: #9e9fa8;
@@ -394,33 +396,33 @@ select {
 }
 
 
-.spanTruckType	{
-	font-size: 14px;
+.spanTruckType  {
+  font-size: 14px;
 }
-.spanETA	{
-	left: 33%;
+.spanETA  {
+  left: 33%;
     position: relative;
     top: 8%;
     font-weight: bold;
 }
 
-.spanTime	{
-	font-size: 30px;
-	text-align: center;
-	left: 30%;
-	color:#ffffff;
-	position: relative;
+.spanTime {
+  font-size: 30px;
+  text-align: center;
+  left: 30%;
+  color:#ffffff;
+  position: relative;
     
 }
-.spanDays	{
-	font-size: 20px;
-	
+.spanDays {
+  font-size: 20px;
+  
 }
-.spanHours	{
-	font-size: 19px;
-	left: 40%;
-	color:#ffffff;
-	margin-left: 27%;
+.spanHours  {
+  font-size: 19px;
+  left: 40%;
+  color:#ffffff;
+  margin-left: 27%;
 }
 
 
@@ -429,82 +431,82 @@ select {
 
 /* color changing based on condition */
 
-#truckDetailsGood,#TD1	{
-	background-color: #26a662;
+#truckDetailsGood,#TD1  {
+  background-color: #26a662;
 }
-.truckDetailsWarning	{
-	background-color: #f1a523 !important;
+.truckDetailsWarning  {
+  background-color: #f1a523 !important;
 }
-.truckDetailsCritical	{
-	background-color: #fe5555 !important;
+.truckDetailsCritical {
+  background-color: #fe5555 !important;
 }
-#truckDetailsOffline	{
-	background-color: #6b6d7a;
-}
-
-
-#truckDetailsGoodETA	{
-	background-color: #219256;
-}
-.truckDetailsWarningETA	{
-	background-color: #db8c34 !important;
-}
-.truckDetailsCriticalETA	{
-	background-color: #de4646 !important;
-}
-#truckDetailsOfflineETA	{
-	background-color: #5e606c;
+#truckDetailsOffline  {
+  background-color: #6b6d7a;
 }
 
 
-#truckDetailsGoodTime 	{
+#truckDetailsGoodETA  {
+  background-color: #219256;
+}
+.truckDetailsWarningETA {
+  background-color: #db8c34 !important;
+}
+.truckDetailsCriticalETA  {
+  background-color: #de4646 !important;
+}
+#truckDetailsOfflineETA {
+  background-color: #5e606c;
+}
+
+
+#truckDetailsGoodTime   {
 box-shadow: 0 0 9px 4px #219256;
 }
-#truckDetailsWarningTime 	{
+#truckDetailsWarningTime  {
 box-shadow: 0 0 9px 4px #db8c04;
 }
-#truckDetailsCriticalTime 	{
+#truckDetailsCriticalTime   {
 box-shadow: 0 0 9px 4px #de4646;
 }
-#truckDetailsOfflineTime	{
+#truckDetailsOfflineTime  {
 box-shadow: 0 0 9px 4px #5e606c;
 }
 
 
-.spanStatusGood		{
-	color:#489812;
-	font-weight: bold;
+.spanStatusGood   {
+  color:#489812;
+  font-weight: bold;
 }
-.spanStatusWarning	{
-	color:#f1a523;
-	font-weight: bold;
+.spanStatusWarning  {
+  color:#f1a523;
+  font-weight: bold;
 }
-.spanStatusCritical	{
-	color:#fe5555;
-	font-weight: bold;
+.spanStatusCritical {
+  color:#fe5555;
+  font-weight: bold;
 }
-.spanStatusOffline	{
-	color:#6b6d7a;
-	font-weight: bold;
+.spanStatusOffline  {
+  color:#6b6d7a;
+  font-weight: bold;
 }
 
 .assetDashboardContainer{
 
-	margin-top: 60px;
-	margin-left: 20px !important ;
+  margin-top: 60px;
+  margin-left: 20px !important ;
 }
 
 .shelfLifeTimeShelf{
-	font-size : 13px;
+  font-size : 13px;
 }
 
 .truckParameters{
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .temperatureControl,.humidityControl,.gasControl{
-	display: none;
-	color: #5d5d5d;
+  display: none;
+  color: #5d5d5d;
     font-size: 13px;
     left: 55px;
     position: relative;
@@ -512,7 +514,7 @@ box-shadow: 0 0 9px 4px #5e606c;
     width: 200px;
 }
 /*.temperatureControlHide:hover{
-	display: none;
+  display: none;
 }
 .temperatureControlHide:hover + .temperatureControl {
     display: block;

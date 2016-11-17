@@ -75,7 +75,7 @@
                     <px-modal  btn-modal-negative="Close" modal-heading="Smart City Notifications : Hospitals">
                 <a href='javascript:void(0)'' class='modal-trigger'>
                     <!-- <i class="fa fa-bell" aria-hidden="true" fa-3x></i>  -->
-                    <img src="../images/hospital-summarybar.png">
+<img src="../images/Hospital1.png">
                 </a>
                 
                 <hr/>
@@ -147,7 +147,7 @@
                         <option value="gasimage">Harmful gases</option>
                     </select>
                     <div class="dashboard-maindata">
-                        <img src="../images/alerticon.png" style="height:48px">
+                        <img src="../images/Alert.png" style="height:48px">
                         <div style="display: inline-block;vertical-align: top;margin-left: 10px;">
                             <div style="color: #B0B0BB">LEVEL EXCEEDS 75%</div>
                             <div style="color:#F05753;font-weight:bold;font-size:22px">{{binfull}} bins</div>
@@ -160,7 +160,7 @@
                         <div class="border-dashboard redborder"><img src="../images/garbage4.png" class="border-image"><div class="image-bottom">{{binfull}}</div></div>
                     </div>
                     <div style="margin-top:10px">
-                        <img src="../images/timeserieschart.png"><a style="padding-left:10px" href="">View Timeseries Chart</a>
+                        <img src="../images/icon.png"><a style="padding-left:10px" href="">View Timeseries Chart</a>
                     </div>
                 </div>
             </div>
@@ -176,7 +176,7 @@
                         <option  value="Lead">Lead content level</option>
                     </select>
                     <div class="dashboard-maindata">
-                        <img src="../images/alerticon.png" style="height:48px">
+                        <img src="../images/Alert.png" style="height:48px">
                         <div style="display: inline-block;vertical-align: top;margin-left: 10px;">
                             <div style="color: #B0B0BB">High {{TankActionvalue}} Level</div>
                             <div style="color:#F05753;font-weight:bold;font-size:22px">{{tankfull}} Reservoirs</div>
@@ -184,12 +184,12 @@
                         <div class="dashboard-button" ng-click="navigateFilterGarbage('Tank')">Locate reservoir</div>
                     </div>
                      <div>
-                        <div class="border-dashboard"><img src="../images/phlevel.png" class="border-image"><div class="image-bottom">{{tankempty}}</div></div>
-                        <div class="border-dashboard"><img src="../images/phlevel.png" class="border-image"><div class="image-bottom">{{tankmedium}}</div></div>
-                        <div class="border-dashboard redborder"><img src="../images/phlevel.png" class="border-image"><div class="image-bottom">{{tankfull}}</div></div>
+                        <div class="border-dashboard"><img src="../images/hP1.png" class="border-image"><div class="image-bottom">{{tankempty}}</div></div>
+                        <div class="border-dashboard"><img src="../images/hP2.png" class="border-image"><div class="image-bottom">{{tankmedium}}</div></div>
+                        <div class="border-dashboard redborder"><img src="../images/hp3.png" class="border-image"><div class="image-bottom">{{tankfull}}</div></div>               
                   </div>
                     <div style="margin-top:10px">
-                        <img src="../images/timeserieschart.png"><a style="padding-left:10px" href="">View Timeseries Chart</a>
+                        <img src="../images/icon.png"><a style="padding-left:10px" href="">View Timeseries Chart</a>
                     </div>
                 </div>
             </div>
@@ -211,9 +211,9 @@
                                 <div class="border-dashboard-hospital"><img src="../images/bedunoccupied.png" class="border-image"><span style="vertical-align: top;">Unoccupied</span><div class="image-bottom">{{hospitalsingle.unoccupiedseat}}</div></div>
                             </div>
                             <div ng-show=hospitalsingle.showtop>
-                                <div class="border-dashboard"><img src="../images/phlevel.png" class="border-image"><div class="image-bottom">{{hospitalsingle.medicine1}}</div></div>
-                                <div class="border-dashboard"><img src="../images/phlevel.png" class="border-image"><div class="image-bottom">{{hospitalsingle.medicine2}}</div></div>
-                                <div class="border-dashboard"><img src="../images/phlevel.png" class="border-image"><div class="image-bottom">{{hospitalsingle.medicine3}}</div></div>
+                                <div class="border-dashboard"><img src="../images/Medicine1.png" class="border-image"><div class="image-bottom">{{hospitalsingle.medicine1}}</div></div>
+                                <div class="border-dashboard"><img src="../images/Medicine2.png" class="border-image"><div class="image-bottom">{{hospitalsingle.medicine2}}</div></div>
+                                <div class="border-dashboard"><img src="../images/Medicine3.png" class="border-image"><div class="image-bottom">{{hospitalsingle.medicine3}}</div></div>               
                             </div>
                         </div>
                         <div style="padding-top:14px;clear:both">
@@ -225,32 +225,51 @@
                 <div class="truck-container">
                     <div ng-show="showSpinner4">
                         <px-spinner></px-spinner>
-                    </div>
+                    </div>  
                     <div ng-hide="showSpinner4">
                         <div>
-                        <img src="../images/truckicon.png">
+                        
                         <div style="display: inline-block;vertical-align: top;margin-left: 10px;">
-                            <div class="truck-header">FIRE TRUCKS</div>
                             <div>
-                                <div class="truck-main" style="display:inline-block">
-                                    <div class="truck-sub" ng-style="{width: truckresponse[0].occupied + '%' }"></div>
+                                <div style="display:inline-block"><img src="../images/FireTruck.png"></div>
+                                <div style="display:inline-block;margin-left:15px">
+                                    <div class="truck-header">FIRE TRUCKS</div>
+                                    <div>
+                                        <div class="truck-main" style="display:inline-block">
+                                            <div class="truck-sub" ng-style="{width: truckresponse[0].occupied + '%' }"></div>
+                                        </div>
+                                        <div style="display:inline-block;margin-left:10px"><span class="truckheader-span">{{truckresponse[0].occupied}}</span> out of {{truckresponse[0].totalavailable}}</div>
+                                    </div>
                                 </div>
-                                <div style="display:inline-block;margin-left:10px"><span class="truckheader-span">{{truckresponse[0].occupied}}</span> out of {{truckresponse[0].totalavailable}}</div>
                             </div>
-                            <div class="truck-header">COLLECTION TRUCKS</div>
+                            <div>
+                                <div style="display:inline-block"><img src="../images/CollectionTruck.png"></div>
+                                <div style="display:inline-block;margin-left:15px">
+                            <div class="truck-header">GARBAGE COLLECTION TRUCKS</div>
                             <div>
                                 <div class="truck-main" style="display:inline-block">
                                     <div class="truck-sub" ng-style="{width: truckresponse[2].occupied + '%' }"></div>
                                 </div>
                                 <div style="display:inline-block;margin-left:10px"><span class="truckheader-span">{{truckresponse[2].occupied}}</span> out of {{truckresponse[0].totalavailable}}</div>
                             </div>
-                            <div class="truck-header">AMBULENCE</div>
+                            </div>
+                            </div>
+                            <div>
+                            <div>
+                                <div style="display:inline-block"><img src="../images/Ambulence.png"></div>
+                                <div style="display:inline-block;margin-left:15px">
+                            <div class="truck-header">AMBULANCE</div>
                             <div>
                                 <div class="truck-main" style="display:inline-block">
                                     <div class="truck-sub" ng-style="{width: truckresponse[3].occupied + '%' }"></div>
                                 </div>
                                 <div style="display:inline-block;margin-left:10px"><span class="truckheader-span">{{truckresponse[3].occupied}}</span> out of {{truckresponse[0].totalavailable}}</div>
                             </div>
+                            </div>
+                            </div>
+                            <div>
+                                <div style="display:inline-block"><img src="../images/CityBus.png"></div>
+                                <div style="display:inline-block;margin-left:15px">
                             <div class="truck-header">CITY BUS</div>
                             <div>
                                 <div class="truck-main" style="display:inline-block">
@@ -258,13 +277,15 @@
                                 </div>
                                 <div style="display:inline-block;margin-left:10px"><span class="truckheader-span">{{truckresponse[4].occupied}}</span> out of {{truckresponse[0].totalavailable}}</div>
                             </div>
-                        </div>
+                                </div>
+                                </div>
+                        </div>                    
                         </div>
                         <div style="padding-top:2px;clear:both">
-
+                           
                         </div>
                     </div>
-
+                    
                 </div>
             </div>
             <div style="margin-top:10px;clear:both"></div>
